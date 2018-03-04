@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+  <!--[if IEMobile 7]><html class="no-js ie iem7" lang="fr" dir="ltr"><![endif]-->
+  <!--[if lte IE 6]><html class="no-js ie lt-ie9 lt-ie8 lt-ie7" lang="fr" dir="ltr"><![endif]-->
+  <!--[if (IE 7)&(!IEMobile)]><html class="no-js ie lt-ie9 lt-ie8" lang="fr" dir="ltr"><![endif]-->
+  <!--[if IE 8]><html class="no-js ie lt-ie9" lang="fr" dir="ltr"><![endif]-->
+  <!--[if (gte IE 9)|(gt IEMobile 7)]><html class="no-js ie" lang="fr" dir="ltr"><![endif]-->
+  <!--[if !IE]><!--><html class="no-js" lang="fr" dir="ltr"><!--<![endif]-->
+<head>
+  <meta charset="utf-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&&e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f<c;f++)u[f].apply(a,r);var p=s[y[n]];return p&&p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+<meta http-equiv="cleartype" content="on" />
+<meta name="MobileOptimized" content="width" />
+<link rel="apple-touch-icon-precomposed" href="https://restaurant.michelin.fr/sites/mtpb2c_fr/themes/mtpb2c/contrib/omega/omega/apple-touch-icon-precomposed.png" />
+<link rel="apple-touch-icon-precomposed" href="https://restaurant.michelin.fr/sites/mtpb2c_fr/themes/mtpb2c/contrib/omega/omega/apple-touch-icon-precomposed-72x72.png" sizes="72x72" />
+<meta http_equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="apple-touch-icon-precomposed" href="https://restaurant.michelin.fr/sites/mtpb2c_fr/themes/mtpb2c/contrib/omega/omega/apple-touch-icon-precomposed-144x144.png" sizes="144x144" />
+<link rel="apple-touch-icon-precomposed" href="https://restaurant.michelin.fr/sites/mtpb2c_fr/themes/mtpb2c/contrib/omega/omega/apple-touch-icon-precomposed-114x114.png" sizes="114x114" />
+<meta name="HandheldFriendly" content="true" />
+<link rel="profile" href="http://www.w3.org/1999/xhtml/vocab" />
+<link rel="shortcut icon" href="https://restaurant.michelin.fr/sites/mtpb2c_fr/themes/mtpb2c/custom/michelin/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="Dans un décor plein de charme, le Jardin des Remparts, près des hospices de Beaune, se situe là où se dressaient les anciens remparts de la ville. Primé d’une étoile au guide MICHELIN, ce restaurant vous propose une cuisine vraie au goût du jour." />
+<meta name="viewport" content="width=device-width" />
+<meta name="generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="https://restaurant.michelin.fr/28u6ql7/le-jardin-des-remparts-beaune" />
+<link rel="shortlink" href="https://restaurant.michelin.fr/node/355797" />
+  <title>Le Jardin des Remparts - Beaune | MICHELIN Restaurants</title>
+  <link type="text/css" rel="stylesheet" href="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/css/css_kQC7TIiuOUL-has6d3UlPcvL5d-J-ZBynxHRlanIpb4.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/css/css_lkvHUqwuaMnlSkPLjR6wgdcvM88sr5Mi-fDRQ-vdqKU.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/css/css_vZ_wrMQ9Og-YPPxa1q4us3N7DsZMJa-14jShHgRoRNo.css" media="screen" />
+<link type="text/css" rel="stylesheet" href="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/css/css_WRyZQIPRct-Sj447biGY2ZaH8OpqUoO1ljUH9PGEbMw.css" media="all" />
+<style>#sliding-popup.sliding-popup-bottom{background:#FFFFFF;}#sliding-popup .popup-content #popup-text h2,#sliding-popup .popup-content #popup-text p{color:#000000 !important;}
+</style>
+<link type="text/css" rel="stylesheet" href="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/css/css_zZq6uUjkGbGtPXOgJC7mBrVeJjG0ENxgMk1QTUwyiH8.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/css/css_XNQxBwnCVpONXHvxWBw0SAS_fFzwuLEU6LIsSzYjgBk.css" media="all" />
+  <script src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/js/js_jUGMAWXyVvwzUHrnLYAOC20Z5Zo2RFUW2xbLBM2kqrc.js"></script>
+<script src="//cdn.optimizely.com/js/7256613505.js"></script>
+<script src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/js/js_fGDtiCISSpTbJrIMpa7D_MzTM-tOL6NuLxyMp4-qVBA.js"></script>
+<script src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/js/js_6uMVSUgDf9ldb_NCxvCamFQoenOq-XcovWYUCJT4HIU.js"></script>
+<script src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/js/js_B6iEF3pR9NKtYu94XGs_Uebo0FqRt7OlS2YZeqDLe84.js"></script>
+<script src="https://apijsv2.viamichelin.com/apijsv2/api/js?key=JSBS20160513115841247657803235$170883&amp;lang=fra&amp;protocol=https"></script>
+<script src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/js/js_wwTPHyf721Wl7_QP2x0qZGxAOvOTRTzw5lofZ0NBVF8.js"></script>
+<script src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/js/js_2ciTPq16fzgZbD14tKmuSyMkAHTkKiONPObTPwearHA.js"></script>
+<script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","autocomplete_limit":{"limit":"2"},"ajaxPageState":{"theme":"michelin","theme_token":"BJDoWRnATX3AjXTwYiIORrsxGqViniiQPw6Hy5VxKps","jquery_version":"1.10","js":{"0":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/custom\/mr_b2c_michelin_maps\/js\/mr_b2c_michelin_maps.utility.js":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/custom\/mr_b2c_michelin_maps\/js\/mr_b2c_michelin_maps.maps.js":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/contrib\/eu_cookie_compliance\/js\/eu_cookie_compliance.js":1,"1":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/contrib\/clientside_validation\/clientside_validation.ie8.js":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/contrib\/clientside_validation\/clientside_validation.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/jquery\/1.10\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/mtpb2c_fr\/themes\/mtpb2c\/contrib\/omega\/omega\/js\/no-js.js":1,"\/\/cdn.optimizely.com\/js\/7256613505.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.core.min.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.widget.min.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.accordion.min.js":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/contrib\/views_slideshow\/js\/views_slideshow.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.position.min.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.tooltip.min.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/contrib\/select2\/js\/Drupal.select2.js":1,"misc\/ajax.js":1,"sites\/all\/modules\/contrib\/jquery_update\/js\/jquery_update.js":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/contrib\/lazyloader\/jquery.lazyloader.js":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/custom\/mr_b2c_booking\/js\/mr_b2c_booking_tracking.js":1,"public:\/\/languages\/fr_IJaSK4YhKiriViaMXuWyKNURD6Te1bUNHhqcra1oL4U.js":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/contrib\/accordion_blocks\/accordion_init.js":1,"misc\/progress.js":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/custom\/features\/ft_b2c_poi\/js\/ft_b2c_poi.nearby.js":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/contrib\/readmore\/js\/readmore.js":1,"sites\/mtpb2c_fr\/libraries\/flexslider\/jquery.flexslider-min.js":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/contrib\/flexslider_views_slideshow\/js\/flexslider_views_slideshow.js":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/custom\/features\/ft_b2c_poi\/js\/ft_b2c_poi.carousel.js":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/custom\/features\/ft_b2c_poi\/js\/ft_b2c_poi_map.js":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/custom\/features\/ft_b2c_poi\/js\/ft_b2c_poi.scrollspy.js":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/contrib\/better_exposed_filters\/better_exposed_filters.js":1,"sites\/mtpb2c_fr\/libraries\/select2\/select2.js":1,"sites\/mtpb2c_fr\/libraries\/select2\/select2_locale_fr.js":1,"sites\/all\/modules\/contrib\/ctools\/js\/auto-submit.js":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/custom\/mr_b2c_seo\/js\/mr_b2c_seo.utility.js":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/custom\/mr_b2c_search_pager\/js\/mr_b2c_search_pager.js":1,"sites\/all\/modules\/contrib\/views\/js\/base.js":1,"sites\/all\/modules\/contrib\/views\/js\/ajax_view.js":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/custom\/features\/ft_b2c_poi\/js\/ft_b2c_poi.booking.js":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/custom\/mr_b2c_booking\/js\/mr_b2c_booking.ajax.js":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/custom\/mr_b2c_booking\/js\/mr_b2c_booking_form.js":1,"sites\/all\/modules\/contrib\/ctools\/js\/ajax-responder.js":1,"sites\/all\/modules\/contrib\/ctools\/js\/modal.js":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/contrib\/clientside_validation\/jquery-validate\/jquery.validate.js":1,"misc\/autocomplete.js":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/contrib\/autocomplete_limit\/js\/autocomplete.limit.js":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/custom\/features\/ft_b2c_poi_search\/js\/ft_b2c_poi_search_form.js":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/custom\/features\/ft_b2c_poi_search\/js\/ft_b2c_poi_search.ajax.js":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/custom\/features\/ft_b2c_footer_blocks\/js\/ft_b2c_footer_blocks.js":1,"https:\/\/apijsv2.viamichelin.com\/apijsv2\/api\/js?key=JSBS20160513115841247657803235$170883\u0026lang=fra\u0026protocol=https":1,"sites\/mtpb2c_fr\/libraries\/slideout\/slideout.js":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/custom\/features\/ft_b2c_sliding_menu\/js\/ft_b2c_sliding_menu.js":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/custom\/mr_b2c_seo\/js\/mr_b2c_seo_gtm.js":1,"sites\/mtpb2c_fr\/themes\/mtpb2c\/custom\/restaurant_base\/js\/jquery.sticky-kit.js":1,"sites\/mtpb2c_fr\/themes\/mtpb2c\/custom\/restaurant_base\/js\/readmore.js":1,"sites\/mtpb2c_fr\/themes\/mtpb2c\/custom\/restaurant_base\/js\/jquery.dotdotdot.js":1,"sites\/mtpb2c_fr\/themes\/mtpb2c\/custom\/restaurant_base\/js\/script.js":1},"css":{"sites\/mtpb2c_fr\/themes\/mtpb2c\/contrib\/omega\/omega\/css\/modules\/system\/system.base.css":1,"sites\/mtpb2c_fr\/themes\/mtpb2c\/contrib\/omega\/omega\/css\/modules\/system\/system.menus.theme.css":1,"sites\/mtpb2c_fr\/themes\/mtpb2c\/contrib\/omega\/omega\/css\/modules\/system\/system.messages.theme.css":1,"sites\/mtpb2c_fr\/themes\/mtpb2c\/contrib\/omega\/omega\/css\/modules\/system\/system.theme.css":1,"sites\/all\/modules\/contrib\/date\/date_api\/date.css":1,"sites\/all\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/node\/node.css":1,"sites\/all\/modules\/contrib\/office_hours\/office_hours.css":1,"sites\/mtpb2c_fr\/themes\/mtpb2c\/contrib\/omega\/omega\/css\/modules\/field\/field.theme.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/contrib\/lazyloader\/lazyloader.css":1,"sites\/mtpb2c_fr\/themes\/mtpb2c\/contrib\/omega\/omega\/css\/modules\/user\/user.base.css":1,"sites\/mtpb2c_fr\/themes\/mtpb2c\/contrib\/omega\/omega\/css\/modules\/user\/user.theme.css":1,"misc\/ui\/jquery.ui.core.css":1,"misc\/ui\/jquery.ui.theme.css":1,"misc\/ui\/jquery.ui.accordion.css":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/contrib\/views_slideshow\/views_slideshow.css":1,"misc\/ui\/jquery.ui.tooltip.css":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/contrib\/accordion_blocks\/accordion_init.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/contrib\/panels\/css\/panels.css":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/contrib\/flexslider\/assets\/css\/flexslider_img.css":1,"sites\/mtpb2c_fr\/libraries\/flexslider\/flexslider.css":1,"sites\/all\/modules\/contrib\/addressfield\/addressfield.css":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/custom\/mr_b2c_michelin_maps\/css\/mr_b2c_michelin_maps.css":1,"sites\/mtpb2c_fr\/libraries\/select2\/select2.css":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/contrib\/select2\/css\/select2_integration.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/modal.css":1,"0":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/contrib\/eu_cookie_compliance\/css\/eu_cookie_compliance.css":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/custom\/features\/ft_b2c_sliding_menu\/css\/ft_b2c_sliding_menu.css":1,"sites\/mtpb2c_fr\/themes\/mtpb2c\/custom\/restaurant_base\/css\/restaurant.normalize.css":1,"sites\/mtpb2c_fr\/themes\/mtpb2c\/custom\/michelin\/css\/restaurant.styles.css":1}},"viewsSlideshow":{"poi_image_slideshow-restaurant_slideshow":{"methods":{"goToSlide":["viewsSlideshowPager","viewsSlideshowSlideCounter"],"nextSlide":["viewsSlideshowPager","viewsSlideshowSlideCounter","flexsliderViewsSlideshow"],"pause":["viewsSlideshowControls","flexsliderViewsSlideshow"],"play":["viewsSlideshowControls","flexsliderViewsSlideshow"],"previousSlide":["viewsSlideshowPager","viewsSlideshowSlideCounter","flexsliderViewsSlideshow"],"transitionBegin":["viewsSlideshowPager","viewsSlideshowSlideCounter"],"transitionEnd":[]},"paused":0}},"flexslider_views_slideshow":{"#flexslider_views_slideshow_main_poi_image_slideshow-restaurant_slideshow":{"num_divs":17,"id_prefix":"#flexslider_views_slideshow_main_","vss_id":"poi_image_slideshow-restaurant_slideshow","namespace":"flex-","selector":".slides \u003E li","easing":"swing","direction":"horizontal","reverse":false,"smoothHeight":false,"startAt":0,"animationSpeed":600,"initDelay":100,"useCSS":true,"touch":true,"video":false,"keyboard":true,"multipleKeyboard":false,"mousewheel":0,"controlsContainer":".flex-control-nav-container","sync":"","asNavFor":"","itemWidth":0,"itemMargin":0,"minItems":0,"maxItems":0,"move":0,"animation":"slide","slideshow":false,"slideshowSpeed":7000,"directionNav":true,"controlNav":true,"prevText":"Previous","nextText":"Next","pausePlay":false,"pauseText":"Pause","playText":"Play","randomize":false,"thumbCaptions":false,"thumbCaptionsBoth":false,"animationLoop":true,"pauseOnAction":true,"pauseOnHover":false,"manualControls":""}},"better_exposed_filters":{"views":{"poi_image_slideshow":{"displays":{"restaurant_slideshow":{"filters":[]}}},"restaurant_offers":{"displays":{"embedded_block":{"filters":[]}}},"customer_reviews":{"displays":{"default":{"filters":[]}}},"news":{"displays":{"restaurant_news":{"filters":[]}}}},"datepicker":false,"slider":false,"settings":[]},"map_pins":{"normal":{"non-bookable":{"url":"\/sites\/mtpb2c_fr\/themes\/mtpb2c\/custom\/michelin\/img\/map-pins\/normal\/default-marker.png","x":-31,"y":-41},"bookable":{"url":"\/sites\/mtpb2c_fr\/themes\/mtpb2c\/custom\/michelin\/img\/map-pins\/normal\/bookable-marker.png","x":-31,"y":-41}},"active":{"non-bookable":{"url":"\/sites\/mtpb2c_fr\/themes\/mtpb2c\/custom\/michelin\/img\/map-pins\/active\/default-marker.png","x":-31,"y":-41},"bookable":{"url":"\/sites\/mtpb2c_fr\/themes\/mtpb2c\/custom\/michelin\/img\/map-pins\/active\/bookable-marker.png","x":-31,"y":-41}}},"caption_html":"\u003Cimg src=\u0022\/sites\/mtpb2c_fr\/themes\/mtpb2c\/custom\/michelin\/img\/map-pins\/normal\/bookable-marker.png\u0022\u003E\u0026nbsp;\u003Cspan class=\u0022caption\u0022\u003ER\u00e9servation en ligne\u003C\/span\u003E","auto_search_html":"\u003Cdiv class=\u0022auto-search auto-search-enabled\u0022\u003E\u003Cinput type=\u0022checkbox\u0022 value=\u00221\u0022 id=\u0022update-results-auto\u0022 class=\u0022default-enabled\u0022\u003E\u003Clabel for=\u0022update-results-auto\u0022\u003EActualiser la carte automatiquement\u003C\/label\u003E\u003C\/div\u003E\u003Cdiv class=\u0022auto-search auto-search-disabled\u0022 style=\u0022display: none;\u0022\u003E\u003Cinput type=\u0022button\u0022 value=\u0022Actualiser la recherche\u0022 id=\u0022update-results-manual\u0022\u003E\u003C\/div\u003E","back_to_results":"\u003Cinput type=\u0022button\u0022 class=\u0022btn btn-show-search-result-list mobile-only\u0022 value=\u0022Retour\u0022 \/\u003E","poi_marker":{"id":"355797","xy":{"geom":"POINT (4.83748 47.0212)","geo_type":"point","lat":"47.021200000000","lon":"4.837480000000","left":"4.837480000000","top":"47.021200000000","right":"4.837480000000","bottom":"47.021200000000","geohash":"u077qpfw36"},"title":"Le Jardin des Remparts","bookable":true},"poi_map":{"center":{"lon":"4.837480000000","lat":"47.021200000000"},"zoom":13},"mr_b2c_michelin_maps":{"default":{"zoom":5,"center":{"lat":46.2276,"lon":2.2137}}},"select_2":{"elements":{"edit-sort-bef-combine":{"separator":"\u00b6","jqui_sortable":false,"dropdownAutoWidth":true,"width":"element","containerCssClass":"","minimumResultsForSearch":15,"allowClear":true},"edit-cooking-type":{"placeholder":"Tous les types de cuisine","allowClear":false}},"excludes":{"by_id":{"values":[],"reg_exs":[]},"by_class":[],"by_selectors":[]},"branch":3,"default_settings":{"separator":"\u00b6","jqui_sortable":false,"dropdownAutoWidth":true,"width":"element","containerCssClass":"","minimumResultsForSearch":15},"process_all_selects_on_page":true,"no_version_check":false,"settings_updated":true},"urlIsAjaxTrusted":{"\/":true,"\/search-restaurants-quick":true,"\/2brryjd\/1786-cordon":true},"views":{"ajax_path":"\/views\/ajax","ajaxViews":{"views_dom_id:b913cbce8b2649307f34ba942453c792":{"view_name":"customer_reviews","view_display_id":"default","view_args":"355797","view_path":"node\/355797","view_base_path":null,"view_dom_id":"b913cbce8b2649307f34ba942453c792","pager_element":0}}},"CToolsModal":{"loadingText":"Loading...","closeText":"Close Window","closeImage":"\u003Cimg data-src=\u0022https:\/\/restaurant.michelin.fr\/sites\/all\/modules\/contrib\/ctools\/images\/icon-close-window.png\u0022 src=\u0022https:\/\/restaurant.michelin.fr\/sites\/mtpb2c_fr\/modules\/mtpb2c\/contrib\/lazyloader\/image_placeholder.gif\u0022 alt=\u0022Close window\u0022 title=\u0022Close window\u0022 \/\u003E\u003Cnoscript\u003E\u003Cimg src=\u0022https:\/\/restaurant.michelin.fr\/sites\/all\/modules\/contrib\/ctools\/images\/icon-close-window.png\u0022 alt=\u0022Close window\u0022 title=\u0022Close window\u0022 \/\u003E\u003C\/noscript\u003E","throbber":"\u003Cimg data-src=\u0022https:\/\/restaurant.michelin.fr\/sites\/all\/modules\/contrib\/ctools\/images\/throbber.gif\u0022 src=\u0022https:\/\/restaurant.michelin.fr\/sites\/mtpb2c_fr\/modules\/mtpb2c\/contrib\/lazyloader\/image_placeholder.gif\u0022 alt=\u0022Loading\u0022 title=\u0022Loading...\u0022 \/\u003E\u003Cnoscript\u003E\u003Cimg src=\u0022https:\/\/restaurant.michelin.fr\/sites\/all\/modules\/contrib\/ctools\/images\/throbber.gif\u0022 alt=\u0022Loading\u0022 title=\u0022Loading...\u0022 \/\u003E\u003C\/noscript\u003E"},"eu_cookie_compliance":{"popup_enabled":1,"popup_agreed_enabled":0,"popup_hide_agreed":1,"popup_clicking_confirmation":0,"popup_html_info":"\u003Cdiv\u003E\n  \u003Cdiv class =\u0022popup-content info\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022\u003E\n      \u003Cp\u003EEn continuant \u00e0 naviguer sur notre site, vous acceptez que nous utilisions des cookies pour mesurer l\u0027audience de notre site et vous proposer des contenus selon vos centres d\u0027int\u00e9r\u00eats. \u003Ca href=\u0022http:\/\/restaurant.michelin.fr\u0022\u003EEn savoir plus et g\u00e9rer les param\u00e8tres.\u003C\/a\u003E\u003C\/p\u003E\n    \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button\u0022\u003EOui\u003C\/button\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button\u0022\u003ENon\u003C\/button\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E\n","popup_html_agreed":"\u003Cdiv\u003E\n  \u003Cdiv class =\u0022popup-content agreed\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022\u003E\n          \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022hide-popup-button\u0022\u003E\u003C\/button\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button\u0022 \u003E\u003C\/button\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","popup_height":"auto","popup_width":"100%","popup_delay":1000,"popup_link":"http:\/\/restaurant.michelin.fr","popup_link_new_window":1,"popup_position":null,"popup_language":"fr","domain":"","cookie_expiration_period":15},"clientsideValidation":{"forms":{"ft-b2c-poi-search-block-form":{"errorPlacement":5,"general":{"errorClass":"error","wrapper":"li","validateTabs":"","scrollTo":1,"scrollSpeed":1000,"disableHtml5Validation":1,"validateOnBlur":1,"validateOnBlurAlways":0,"validateOnKeyUp":"0","validateBeforeAjax":"1","validateOnSubmit":1,"showMessages":0,"errorElement":"label"},"rules":{"text":{"maxlength":128,"messages":{"maxlength":"O\u00f9 ? field has to have maximum 128 values."}}}}},"general":{"usexregxp":0,"months":{"Janvier":1,"Jan":1,"F\u00e9vrier":2,"Fev":2,"Mars":3,"Mar":3,"Avril":4,"Avr":4,"Mai":5,"Juin":6,"Juillet":7,"Jui":7,"Ao\u00fbt":8,"Octobre":10,"Sep":9,"Oct":10,"Novembre":11,"Nov":11,"D\u00e9cembre":12,"Dec":12}},"groups":{"ft-b2c-poi-search-block-form":{}}}});</script>
+</head>
+<body itemtype="http://schema.org/Restaurant" itemscope="" class="html not-front not-logged-in page-node page-node- page-node-355797 node-type-poi i18n-fr section-28u6ql7">
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-WNBQ4S" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script type="text/javascript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0];var j=d.createElement(s);var dl=l!='dataLayer'?'&l='+l:'';j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;j.type='text/javascript';j.async=true;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WNBQ4S');</script>
+<!-- End Google Tag Manager -->
+  <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+
+<div class="l-page">
+  <header class="l-header clearfix" role="banner">
+    <div class="l-header-inner">
+        <div class="l-region l-region--header">
+    <div id="block-ft-b2c-sliding-menu-ft-b2c-sliding-menu-sliding-menu" class="block block--ft-b2c-sliding-menu block--ft-b2c-sliding-menu-ft-b2c-sliding-menu-sliding-menu">
+        <div class="block__content">
+    <div class="header-menu-trigger-wrapper"><a href="#navbar" class="hamburger js-slideout-toggle"><span>Menu</span></a></div>  </div>
+</div>
+<div id="block-mr-b2c-header-blocks-mr-b2c-header-blocks-site-name" class="block block--mr-b2c-header-blocks block--mr-b2c-header-blocks-mr-b2c-header-blocks-site-name">
+        <div class="block__content">
+    <div class="site-name"><a href="/" class="michelin-header__logo"></a></div>  </div>
+</div>
+  </div>
+        <div class="l-region l-region--sub-header">
+    <nav id="block-system-main-menu" role="navigation" class="block block--system block--menu block--system-main-menu">
+
+  <ul class="menu"><li class="first last leaf"><a href="/instants-michelin">Instants Michelin</a></li>
+</ul></nav>
+<div id="block-mr-b2c-header-blocks-mr-b2c-header-blocks-logo" class="block block--mr-b2c-header-blocks block--mr-b2c-header-blocks-mr-b2c-header-blocks-logo">
+        <div class="block__content">
+    <div class="site-logo"><a href="https://restaurant.michelin.fr" title="Accueil" rel="Accueil" class="logo"><img class="header-michelin-logo" data-src="https://restaurant.michelin.fr/sites/mtpb2c_fr/themes/mtpb2c/custom/michelin/logo.png" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/modules/mtpb2c/contrib/lazyloader/image_placeholder.gif" alt="MICHELIN Restaurants" title="MICHELIN Restaurants" /><noscript><img class="header-michelin-logo" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/themes/mtpb2c/custom/michelin/logo.png" alt="MICHELIN Restaurants" title="MICHELIN Restaurants" /></noscript></a></div>  </div>
+</div>
+
+<div class="search-button-wrapper">
+  <div class="search-icon search-icon-open icon-mr icon-search"></div>
+  <div class="search-icon search-icon-close icon-mr icon-croix01"></div>
+</div>
+  </div>
+    </div>
+  </header>
+
+  <div class="l-content-wrapper">
+    <div class="l-overlay"></div>
+    <div class="l-main-prefix">
+                <div class="l-region l-region--main-prefix">
+    <div id="block-ft-b2c-poi-search-ft-b2c-poi-search-form" class="block block--ft-b2c-poi-search block--ft-b2c-poi-search-ft-b2c-poi-search-form">
+        <div class="block__content">
+    <form class="mr-poi-search-form ft-b2c-poi-search-block-form" action="/search-restaurants-quick" method="get" id="ft-b2c-poi-search-block-form" accept-charset="UTF-8"><div><div class="ft-b2c-poi-search-form ft-b2c-poi-search-form-other form-wrapper" id="edit-content"><input attr-text="" type="hidden" name="localisation" value="" />
+<div class="form-item form-type-textfield form-item-text">
+  <label for="edit-text">Où ? </label>
+ <input data-limit="2" placeholder="Ville / Nom de restaurant" type="text" id="edit-text" name="text" value="" size="60" maxlength="128" class="form-text form-autocomplete" /><input type="hidden" id="edit-text-autocomplete" value="https://restaurant.michelin.fr/index.php?q=search/autocomplete" disabled="disabled" class="autocomplete" /> <span class="field-suffix"><span class="around-me-search" title="Search nearby restaurants"></span></span>
+</div>
+<div class="form-item form-type-select form-item-cooking-type">
+  <label for="edit-cooking-type">Quoi ? </label>
+ <select class="use-select-2 form-select" id="edit-cooking-type" name="cooking_type"><option value="" selected="selected">Tous les types de cuisine</option><option value="516">Asiatique</option><option value="256">Bistrot, Brasserie, Bar à vin</option><option value="321">Poissons, Fruits de Mer</option><option value="306">Gastronomique</option><option value="366">Viandes, Grillades</option><option value="1101">Italien</option><option value="596">Japonais</option><option value="291">Cuisine Moderne, Créative</option><option value="931">Cuisine Régionale Française</option><option value="351">Traditionnel, Classique</option></select>
+</div>
+<div class="form-item form-type-checkbox form-item-gm-selection">
+ <input type="checkbox" id="edit-gm-selection" name="gm_selection" value="1" class="form-checkbox" />  <label class="option" for="edit-gm-selection">Sélection du guide MICHELIN </label>
+
+</div>
+<input class="use-ajax-submit form-submit" type="submit" id="edit-submit" name="op" value="Rechercher" /></div><input type="hidden" name="latitude" value="" />
+<input type="hidden" name="longitude" value="" />
+<input type="hidden" name="form_build_id" value="form-BeU5LseWEszB1nQVw78XU9yrqlFxIbGs5DZLVNS43_o" />
+<input type="hidden" name="form_id" value="ft_b2c_poi_search_block_form" />
+</div></form>  </div>
+</div>
+  </div>
+          </div>
+
+    <div class="l-main" role="main">
+      <div class="l-content clearfix">
+        <div class="l-content-inner">
+          <div class="l-breadcrumbs">
+                      </div>
+                                                <h1>Le Jardin des Remparts</h1>
+                                                                                  </div>
+        <div class="panel-display panels-michelin-content-layout panels-michelin-2colsidebar clearfix">
+
+  <div class="panels-top-background"></div>
+
+      <div class="panels-content-top-wrapper">
+      <div class="panel-panel panels-content-top">
+        <div class="panel-pane pane-page-breadcrumb">
+  <div class="panel-pane-inside">
+                        <ol class="restaurant_base-breadcrumbs-list" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a class=" mr-crumb" itemprop="item" href="https://restaurant.michelin.fr/"><span itemprop="name">Accueil</span><meta itemprop="position" content="1" /></a></li><li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a class=" mr-crumb" itemprop="item" href="https://restaurant.michelin.fr/restaurants/france"><span itemprop="name">France</span><meta itemprop="position" content="2" /></a></li><li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a class=" mr-crumb" itemprop="item" href="https://restaurant.michelin.fr/restaurants/france/bourgogne"><span itemprop="name">Bourgogne</span><meta itemprop="position" content="3" /></a></li><li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a class=" mr-crumb" itemprop="item" href="https://restaurant.michelin.fr/restaurants/cote-dor"><span itemprop="name">Côte-d'Or</span><meta itemprop="position" content="4" /></a></li><li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a class=" mr-crumb" itemprop="item" href="https://restaurant.michelin.fr/restaurants/beaune"><span itemprop="name">Beaune</span><meta itemprop="position" content="5" /></a></li><li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><span class=" mr-crumb" itemprop="item"><span itemprop="name">Le Jardin des Remparts</span><meta itemprop="position" content="6" /></span></li></ol>          </div>
+</div>
+      </div>
+    </div>
+
+
+  <div class="panels-content-main panels-content-main_regionone">
+    <div class="panel-panel">
+
+      <div class="panels-content-main-left">
+        <div class="panel-pane pane-entity-view pane-node">
+  <div class="panel-pane-inside">
+
+<div  class="ds-1col node node--poi view-mode-poi_intro node--poi-intro node--poi--poi-intro clearfix">
+      <div class="poi_intro-display-guide">
+      <div class="guide">Guide MICHELIN 2018<span class="guide-icon icon-mr icon-cotation1etoile"></span></div>
+    </div>
+
+  <div class="poi_intro-description">
+    <div class="poi_card-display-stars">
+              <ul class="review-stars"><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="D icon-mr icon-cercle02 last"></li></ul>        <span class="poi_card-display-reviews-count">59 avis sur ce restaurant</span>
+          </div>
+
+    <h1 class="poi_intro-display-title" itemprop="name">
+      Le Jardin des Remparts    </h1>
+    <input type="hidden" value="28u6ql7" id="restaurant-adn-id" />
+
+    <div class="poi_intro-display-address" itemprop="address" >
+      <div class="field field--name-field-address field--type-addressfield field--label-hidden"><div class="field__items"><div class="field__item even"><div class="street-block"><div class="thoroughfare">10 rue Hôtel-Dieu</div></div><div class="addressfield-container-inline locality-block country-FR"><span class="postal-code">21200</span> <span class="locality">Beaune</span></div><span class="country">France</span></div></div></div>    </div>
+
+    <div class="poi_intro-display-cuisines" itemprop="servesCuisine">
+      Cuisine Moderne, Créative; Végétarien; Végétalien    </div>
+
+          <div class="poi_intro-display-prices">
+        Prix - De 32 € à 100 €      </div>
+
+  </div>
+
+</div>
+          </div>
+</div>
+      </div>
+
+      <div class="panels-content-main-sidebar">
+        <div data-salesforce-id="259497" data-connection-id="FR-MICHELINWEB:84435" class="panel-pane pane-block pane-ft-b2c-poi-ft-b2c-poi-book-restaurant">
+  <div class="panel-pane-inside">
+                  <h2 class="pane-title">
+      Réserver ce restaurant    </h2>
+                <div class="bat-form-placeholder"><p style="text-align: center;">Loading...</p><a class="use-ajax" href="/booking/load-form/355797"></a></div>          </div>
+</div>
+      </div>
+
+    </div>
+  </div>
+  <!-- /.panels-content-main-regionone-->
+
+  <div class="panels-content-main panels-content-main_regiontwo">
+    <div class="panel-panel">
+
+      <div class="panels-content-main-left">
+        <div id="mtpb2c-poi-navigation-wrapper" class="panel-pane pane-block pane-ft-b2c-poi-ft-b2c-poi-sticky-navigation">
+  <div class="panel-pane-inside">
+                        <ul class="mtpb2c-poi-navigation" id="mtpb2c-poi-navigation"><li><a href="#node_poi-photos-wrapper" class="sticky-navigation-link sticky-navigation-link-photos">PHOTOS (17)</a></li>
+<li><a href="#node_poi-promotions-wrapper" class="sticky-navigation-link sticky-navigation-link-promotions">OFFRES (3)</a></li>
+<li><a href="#node_poi-menu-wrapper" class="sticky-navigation-link sticky-navigation-link-menus">MENUS</a></li>
+<li><a href="#node_poi-guide-wrapper" class="sticky-navigation-link sticky-navigation-link-michelin-guide">Guide MICHELIN</a></li>
+<li><a href="#node_poi-info-wrapper" class="sticky-navigation-link sticky-navigation-link-info">INFORMATIONS</a></li>
+<li><a href="#node_poi-review-wrapper" class="sticky-navigation-link sticky-navigation-link-reviews">AVIS (59)</a></li>
+</ul>          </div>
+</div>
+<div class="panel-pane pane-entity-view pane-node">
+  <div class="panel-pane-inside">
+
+<div  class="ds-1col node node--poi view-mode-full node--full node--poi--full clearfix">
+      <div class="node_poi-section node_poi-section-first" id="node_poi-photos-wrapper">
+      <h2 class="photo-count">
+        Photos <span class="count">(17)</span>      </h2>
+      <div class="slideshow-wrapper">
+        <div class="loading-placeholder">
+          <p>Loading...</p>
+        </div>
+        <div class="view view-poi-image-slideshow view-id-poi_image_slideshow view-display-id-restaurant_slideshow view-dom-id-23cc7f900755984bfd65ee24b1980cd3">
+
+
+
+      <div class="view-content">
+
+  <div class="skin-default">
+
+    <div id="flexslider_views_slideshow_main_poi_image_slideshow-restaurant_slideshow" class="flexslider_views_slideshow_main views_slideshow_main"><div class="flex-nav-container">
+  <div class="flexslider">
+    <ul id="flexslider_views_slideshow_poi_image_slideshow-restaurant_slideshow" class="flexslider-views-slideshow-main-frame slides">
+        <li class="flexslider-views-slideshow-main-frame-row flexslider_views_slideshow_slide views-row-1 views-row-odd">
+
+  <div class="views-field views-field-field-image">        <div class="field-content"><img class="auto_image_style landscape" data-src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/poi_detail_landscape/public/Le%20Jardin%20des%20Remparts_Beaune_1.jpg?itok=o3OuAyDt" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/modules/mtpb2c/contrib/lazyloader/image_placeholder.gif" width="785" height="536" alt="" /><noscript><img class="auto_image_style landscape" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/poi_detail_landscape/public/Le%20Jardin%20des%20Remparts_Beaune_1.jpg?itok=o3OuAyDt" width="785" height="536" alt="" /></noscript></div>  </div>
+  <div class="views-field views-field-field-copyright">        <div class="field-content"></div>  </div>  </li>
+  <li class="flexslider-views-slideshow-main-frame-row flexslider_views_slideshow_slide views-row-2 views_slideshow_cycle_hidden views-row-even">
+
+  <div class="views-field views-field-field-image">        <div class="field-content"><img class="auto_image_style landscape" data-src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/poi_detail_landscape/public/LE%20REMPART%20plats-jardinremparts39216.jpg?itok=MNG3yhcT" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/modules/mtpb2c/contrib/lazyloader/image_placeholder.gif" width="785" height="589" alt="" /><noscript><img class="auto_image_style landscape" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/poi_detail_landscape/public/LE%20REMPART%20plats-jardinremparts39216.jpg?itok=MNG3yhcT" width="785" height="589" alt="" /></noscript></div>  </div>
+  <div class="views-field views-field-field-copyright">        <div class="field-content"></div>  </div>  </li>
+  <li class="flexslider-views-slideshow-main-frame-row flexslider_views_slideshow_slide views-row-3 views_slideshow_cycle_hidden views-row-odd">
+
+  <div class="views-field views-field-field-image">        <div class="field-content"><img class="auto_image_style landscape" data-src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/poi_detail_landscape/public/QdRpmLdGMMFAjWrQ.jpg?itok=gDyj4dHy" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/modules/mtpb2c/contrib/lazyloader/image_placeholder.gif" width="785" height="523" /><noscript><img class="auto_image_style landscape" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/poi_detail_landscape/public/QdRpmLdGMMFAjWrQ.jpg?itok=gDyj4dHy" width="785" height="523" /></noscript></div>  </div>
+  <div class="views-field views-field-field-copyright">        <div class="field-content">© ViaMichelin 2015</div>  </div>  </li>
+  <li class="flexslider-views-slideshow-main-frame-row flexslider_views_slideshow_slide views-row-4 views_slideshow_cycle_hidden views-row-even">
+
+  <div class="views-field views-field-field-image">        <div class="field-content"><img class="auto_image_style landscape" data-src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/poi_detail_landscape/public/FrT9GA_dIjxqb1sg.jpg?itok=8gqV51LI" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/modules/mtpb2c/contrib/lazyloader/image_placeholder.gif" width="785" height="523" /><noscript><img class="auto_image_style landscape" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/poi_detail_landscape/public/FrT9GA_dIjxqb1sg.jpg?itok=8gqV51LI" width="785" height="523" /></noscript></div>  </div>
+  <div class="views-field views-field-field-copyright">        <div class="field-content">© ViaMichelin 2015</div>  </div>  </li>
+  <li class="flexslider-views-slideshow-main-frame-row flexslider_views_slideshow_slide views-row-5 views_slideshow_cycle_hidden views-row-odd">
+
+  <div class="views-field views-field-field-image">        <div class="field-content"><img class="auto_image_style landscape" data-src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/poi_detail_landscape/public/le%20rempart%20paleron-de-boeuf-foie-gras-roti-et-betteraves-de-mr-noel.jpg?itok=qIH1kcMA" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/modules/mtpb2c/contrib/lazyloader/image_placeholder.gif" width="785" height="589" alt="" /><noscript><img class="auto_image_style landscape" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/poi_detail_landscape/public/le%20rempart%20paleron-de-boeuf-foie-gras-roti-et-betteraves-de-mr-noel.jpg?itok=qIH1kcMA" width="785" height="589" alt="" /></noscript></div>  </div>
+  <div class="views-field views-field-field-copyright">        <div class="field-content"></div>  </div>  </li>
+  <li class="flexslider-views-slideshow-main-frame-row flexslider_views_slideshow_slide views-row-6 views_slideshow_cycle_hidden views-row-even">
+
+  <div class="views-field views-field-field-image">        <div class="field-content"><img class="auto_image_style landscape" data-src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/poi_detail_landscape/public/vZQF2Lle1iv5darw.jpg?itok=-Xs8vAwh" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/modules/mtpb2c/contrib/lazyloader/image_placeholder.gif" width="785" height="523" /><noscript><img class="auto_image_style landscape" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/poi_detail_landscape/public/vZQF2Lle1iv5darw.jpg?itok=-Xs8vAwh" width="785" height="523" /></noscript></div>  </div>
+  <div class="views-field views-field-field-copyright">        <div class="field-content">© ViaMichelin 2015</div>  </div>  </li>
+  <li class="flexslider-views-slideshow-main-frame-row flexslider_views_slideshow_slide views-row-7 views_slideshow_cycle_hidden views-row-odd">
+
+  <div class="views-field views-field-field-image">        <div class="field-content"><img class="auto_image_style portrait" data-src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/poi_detail_portrait/public/XVS42d2v67l33RSQ.jpg?itok=3xZNogFe" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/modules/mtpb2c/contrib/lazyloader/image_placeholder.gif" width="420" height="560" /><noscript><img class="auto_image_style portrait" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/poi_detail_portrait/public/XVS42d2v67l33RSQ.jpg?itok=3xZNogFe" width="420" height="560" /></noscript></div>  </div>
+  <div class="views-field views-field-field-copyright">        <div class="field-content">© ViaMichelin 2015</div>  </div>  </li>
+  <li class="flexslider-views-slideshow-main-frame-row flexslider_views_slideshow_slide views-row-8 views_slideshow_cycle_hidden views-row-even">
+
+  <div class="views-field views-field-field-image">        <div class="field-content"><img class="auto_image_style portrait" data-src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/poi_detail_portrait/public/OOSiWHn9aOK6Uhsg.jpg?itok=KVZsYkXV" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/modules/mtpb2c/contrib/lazyloader/image_placeholder.gif" width="420" height="560" /><noscript><img class="auto_image_style portrait" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/poi_detail_portrait/public/OOSiWHn9aOK6Uhsg.jpg?itok=KVZsYkXV" width="420" height="560" /></noscript></div>  </div>
+  <div class="views-field views-field-field-copyright">        <div class="field-content">© ViaMichelin 2015</div>  </div>  </li>
+  <li class="flexslider-views-slideshow-main-frame-row flexslider_views_slideshow_slide views-row-9 views_slideshow_cycle_hidden views-row-odd">
+
+  <div class="views-field views-field-field-image">        <div class="field-content"><img class="auto_image_style landscape" data-src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/poi_detail_landscape/public/cxRFSjDRyFoxMWNA.jpg?itok=7JluiVKW" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/modules/mtpb2c/contrib/lazyloader/image_placeholder.gif" width="785" height="523" /><noscript><img class="auto_image_style landscape" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/poi_detail_landscape/public/cxRFSjDRyFoxMWNA.jpg?itok=7JluiVKW" width="785" height="523" /></noscript></div>  </div>
+  <div class="views-field views-field-field-copyright">        <div class="field-content">© ViaMichelin 2015</div>  </div>  </li>
+  <li class="flexslider-views-slideshow-main-frame-row flexslider_views_slideshow_slide views-row-10 views_slideshow_cycle_hidden views-row-even">
+
+  <div class="views-field views-field-field-image">        <div class="field-content"><img class="auto_image_style landscape" data-src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/poi_detail_landscape/public/LE%20REMPART%20plats-jardinremparts39322.jpg?itok=JPQF5-71" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/modules/mtpb2c/contrib/lazyloader/image_placeholder.gif" width="785" height="589" alt="" /><noscript><img class="auto_image_style landscape" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/poi_detail_landscape/public/LE%20REMPART%20plats-jardinremparts39322.jpg?itok=JPQF5-71" width="785" height="589" alt="" /></noscript></div>  </div>
+  <div class="views-field views-field-field-copyright">        <div class="field-content"></div>  </div>  </li>
+  <li class="flexslider-views-slideshow-main-frame-row flexslider_views_slideshow_slide views-row-11 views_slideshow_cycle_hidden views-row-odd">
+
+  <div class="views-field views-field-field-image">        <div class="field-content"><img class="auto_image_style landscape" data-src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/poi_detail_landscape/public/t7SRmvmcrpdUeC0A.jpg?itok=71wHBzGf" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/modules/mtpb2c/contrib/lazyloader/image_placeholder.gif" width="785" height="523" /><noscript><img class="auto_image_style landscape" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/poi_detail_landscape/public/t7SRmvmcrpdUeC0A.jpg?itok=71wHBzGf" width="785" height="523" /></noscript></div>  </div>
+  <div class="views-field views-field-field-copyright">        <div class="field-content">© ViaMichelin 2015</div>  </div>  </li>
+  <li class="flexslider-views-slideshow-main-frame-row flexslider_views_slideshow_slide views-row-12 views_slideshow_cycle_hidden views-row-even">
+
+  <div class="views-field views-field-field-image">        <div class="field-content"><img class="auto_image_style portrait" data-src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/poi_detail_portrait/public/FSSDOG-Wss2svpBg.jpg?itok=v5LTH7qG" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/modules/mtpb2c/contrib/lazyloader/image_placeholder.gif" width="420" height="560" /><noscript><img class="auto_image_style portrait" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/poi_detail_portrait/public/FSSDOG-Wss2svpBg.jpg?itok=v5LTH7qG" width="420" height="560" /></noscript></div>  </div>
+  <div class="views-field views-field-field-copyright">        <div class="field-content">© ViaMichelin 2015</div>  </div>  </li>
+  <li class="flexslider-views-slideshow-main-frame-row flexslider_views_slideshow_slide views-row-13 views_slideshow_cycle_hidden views-row-odd">
+
+  <div class="views-field views-field-field-image">        <div class="field-content"><img class="auto_image_style portrait" data-src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/poi_detail_portrait/public/BJ1ZMGJtLd53z8.jpg?itok=b6XpXBYY" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/modules/mtpb2c/contrib/lazyloader/image_placeholder.gif" width="373" height="560" /><noscript><img class="auto_image_style portrait" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/poi_detail_portrait/public/BJ1ZMGJtLd53z8.jpg?itok=b6XpXBYY" width="373" height="560" /></noscript></div>  </div>
+  <div class="views-field views-field-field-copyright">        <div class="field-content">© ViaMichelin 2015</div>  </div>  </li>
+  <li class="flexslider-views-slideshow-main-frame-row flexslider_views_slideshow_slide views-row-14 views_slideshow_cycle_hidden views-row-even">
+
+  <div class="views-field views-field-field-image">        <div class="field-content"><img class="auto_image_style landscape" data-src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/poi_detail_landscape/public/oQR0Kd8Z3cTunaPA.jpg?itok=tQFJIycA" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/modules/mtpb2c/contrib/lazyloader/image_placeholder.gif" width="785" height="523" /><noscript><img class="auto_image_style landscape" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/poi_detail_landscape/public/oQR0Kd8Z3cTunaPA.jpg?itok=tQFJIycA" width="785" height="523" /></noscript></div>  </div>
+  <div class="views-field views-field-field-copyright">        <div class="field-content">© ViaMichelin 2015</div>  </div>  </li>
+  <li class="flexslider-views-slideshow-main-frame-row flexslider_views_slideshow_slide views-row-15 views_slideshow_cycle_hidden views-row-odd">
+
+  <div class="views-field views-field-field-image">        <div class="field-content"><img class="auto_image_style portrait" data-src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/poi_detail_portrait/public/893_1_0.jpg?itok=wfL4F0yh" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/modules/mtpb2c/contrib/lazyloader/image_placeholder.gif" width="426" height="426" /><noscript><img class="auto_image_style portrait" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/poi_detail_portrait/public/893_1_0.jpg?itok=wfL4F0yh" width="426" height="426" /></noscript></div>  </div>
+  <div class="views-field views-field-field-copyright">        <div class="field-content">© ViaMichelin 2011</div>  </div>  </li>
+  <li class="flexslider-views-slideshow-main-frame-row flexslider_views_slideshow_slide views-row-16 views_slideshow_cycle_hidden views-row-even">
+
+  <div class="views-field views-field-field-image">        <div class="field-content"><img class="auto_image_style portrait" data-src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/poi_detail_portrait/public/893_2_0.jpg?itok=0fjNOPY0" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/modules/mtpb2c/contrib/lazyloader/image_placeholder.gif" width="435" height="438" /><noscript><img class="auto_image_style portrait" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/poi_detail_portrait/public/893_2_0.jpg?itok=0fjNOPY0" width="435" height="438" /></noscript></div>  </div>
+  <div class="views-field views-field-field-copyright">        <div class="field-content">© ViaMichelin 2011</div>  </div>  </li>
+  <li class="flexslider-views-slideshow-main-frame-row flexslider_views_slideshow_slide views-row-17 views_slideshow_cycle_hidden views-row-odd">
+
+  <div class="views-field views-field-field-image">        <div class="field-content"><img class="auto_image_style portrait" data-src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/poi_detail_portrait/public/893_3_0.jpg?itok=wKXJucpM" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/modules/mtpb2c/contrib/lazyloader/image_placeholder.gif" width="470" height="476" /><noscript><img class="auto_image_style portrait" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/poi_detail_portrait/public/893_3_0.jpg?itok=wKXJucpM" width="470" height="476" /></noscript></div>  </div>
+  <div class="views-field views-field-field-copyright">        <div class="field-content">© ViaMichelin 2011</div>  </div>  </li>
+    </ul>
+  </div>
+</div></div>
+      </div>
+    </div>
+
+
+
+
+
+
+</div>      </div>
+    </div>
+
+      <div class="node_poi-section" id="node_poi-promotions-wrapper">
+      <h2 class="promotions-count node_poi-title">
+        Offres <span class="count">(3)</span>      </h2>
+                      <div class="view view-restaurant-offers view-id-restaurant_offers view-display-id-embedded_block view-dom-id-3291928beb7ce7d2a5181bd1740e9d97">
+
+
+
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first">
+    <div class="bookatable-promotion-details-wrapper" itemscope itemtype="http://schema.org/Offer">
+
+  <div class="title-wrapper" itemprop="name">
+    <h2>Menu Empreinte à 85€ par personne</h2>
+  </div>
+
+    <div class="bookatable-promotion-book-link-wrapper">
+    <a href="#mr-b2c-booking-form" class="bookatable-promotion-book-link" data-star-deal="" data-title="Menu Empreinte à 85€ par personne" data-promotion-id="134991">
+      Réserver    </a>
+  </div>
+
+  <div class="validity-dates-wrapper">
+    <meta itemprop="availabilityStarts" content = "06/07/2017"/>
+    <meta itemprop="availabilityEnds" content = "31/07/2021"/>
+    Offre valable du 06/07/2017 au 31/07/2021  </div>
+
+    <div class="pdf-link-wrapper">
+    <ul class="pdf-link-list"><li class="0 first last"><a href="http://content.static-bookatable.com/ServePromotionAttachment.aspx?id=82982&amp;inline=true" target="_blank">Voir le menu </a></li>
+</ul>  </div>
+
+  <meta itemprop="price" content="85">
+  <meta itemprop="priceCurrency" content="€">
+  <meta itemprop="itemCondition" content = "Cette offre est valable de  Juillet 6, 2017 à Juillet 31, 2021,  selon  la disponibilité affichée. L&#039;offre n&#039;est pas cumulable avec d&#039;autres offres pour le même établissement.
+L&#039;offre inclut le service."/>
+</div>
+  </div>
+  <div class="views-row views-row-2 views-row-even">
+    <div class="bookatable-promotion-details-wrapper" itemscope itemtype="http://schema.org/Offer">
+
+  <div class="title-wrapper" itemprop="name">
+    <h2>Menu Empreinte à 85€ par personne</h2>
+  </div>
+
+    <div class="bookatable-promotion-book-link-wrapper">
+    <a href="#mr-b2c-booking-form" class="bookatable-promotion-book-link" data-star-deal="" data-title="Menu Empreinte à 85€ par personne" data-promotion-id="140066">
+      Réserver    </a>
+  </div>
+
+  <div class="validity-dates-wrapper">
+    <meta itemprop="availabilityStarts" content = "28/09/2017"/>
+    <meta itemprop="availabilityEnds" content = "31/12/2018"/>
+    Offre valable du 28/09/2017 au 31/12/2018  </div>
+
+
+  <meta itemprop="price" content="85">
+  <meta itemprop="priceCurrency" content="€">
+  <meta itemprop="itemCondition" content = "Cette offre est valable de  Septembre 28, 2017 à Décembre 31, 2018,  selon  la disponibilité affichée. L&#039;offre n&#039;est pas cumulable avec d&#039;autres offres pour le même établissement.
+L&#039;offre inclut le service."/>
+</div>
+  </div>
+  <div class="views-row views-row-3 views-row-odd views-row-last">
+    <div class="bookatable-promotion-details-wrapper" itemscope itemtype="http://schema.org/Offer">
+
+  <div class="title-wrapper" itemprop="name">
+    <h2>Menu Empreinte: menu dégustation du chef</h2>
+  </div>
+
+    <div class="bookatable-promotion-book-link-wrapper">
+    <a href="#mr-b2c-booking-form" class="bookatable-promotion-book-link" data-star-deal="" data-title="Menu Empreinte: menu dégustation du chef" data-promotion-id="142231">
+      Réserver    </a>
+  </div>
+
+  <div class="validity-dates-wrapper">
+    <meta itemprop="availabilityStarts" content = "26/10/2017"/>
+    <meta itemprop="availabilityEnds" content = "31/10/2027"/>
+    Offre valable du 26/10/2017 au 31/10/2027  </div>
+
+    <div class="pdf-link-wrapper">
+    <ul class="pdf-link-list"><li class="0 first last"><a href="http://content.static-bookatable.com/ServePromotionAttachment.aspx?id=89221&amp;inline=true" target="_blank">Voir le menu </a></li>
+</ul>  </div>
+
+  <meta itemprop="price" content="85">
+  <meta itemprop="priceCurrency" content="€">
+  <meta itemprop="itemCondition" content = "Cette offre est valable de  Octobre 26, 2017 à Octobre 31, 2027,  selon  la disponibilité affichée. L&#039;offre n&#039;est pas cumulable avec d&#039;autres offres pour le même établissement.
+L&#039;offre inclut le service."/>
+</div>
+  </div>
+    </div>
+
+
+
+
+
+
+</div>          </div>
+
+    <div class="node_poi-section" id="node_poi-menu-wrapper">
+    <div class="node_poi-menu-intro node_poi-row">
+      <h2 class="node_poi-title">
+        Menu       </h2>
+
+              <div class="node_poi-price">
+          <span itemprop="priceRange">Prix - De 32 € à 100 €</span>
+                      <span class="full-display-help" title="Prix d'un repas, hors boissons, mentionné à titre indicatif, susceptible de modification par le restaurant.">?</span>
+                  </div>
+
+              <div class="node_poi-cooking-types">
+          Cuisine Moderne, Créative; Végétarien; Végétalien        </div>
+
+              <div class="node_poi-pdf">
+                      <a href="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/carte010717-1_0.pdf" target="_blank">Voir le menu</a> <br>
+                  </div>
+
+    </div>
+          <div class="node_poi-specialities node_poi-row">
+        <div class="field field--name-field-specials field--type-text-long field--label-above"><div class="field__label">Spécialités&nbsp;</div><div class="field__items"><div class="field__item even">Boule d&#039;escargot de Bourgogne, beurre d&#039;ail frit</div><div class="field__item odd">Pain d’épice perdu, cassis et sirop de vin rouge</div></div></div>      </div>
+
+          <div class="node_poi-special-dishes node_poi-row">
+        <div class="node_poi-special-dishes-title">Menus proposés :</div>
+        <div class="node_poi-dishes">Menu enfant; Végétalien; Végétarien</div>
+      </div>
+
+          <div class="node_poi-menu-accordion node_poi-row">
+        <div id="accordion"><div class="field field--name-field-menu field--type-entityreference field--label-hidden"><div class="field__items"><div class="field__item even">  <h3>d'Ici et d'Ailleurs - 32 €</h3>
+  <div class="menu-wrapper">
+    <p class="menu-description">
+      <div class="field field--name-body field--type-text-with-summary field--label-hidden"><div class="field__items"><div class="field__item even"><p>En 4 services - formule Déjeuner<br />
+uniquement au déjeuner et est un exemple de ce que le chef peut vous proposer, les plats changeant très régulièrement</p>
+</div></div></div>    </p>
+    <div class="menu-dishes"><ul class="menu-dishes"><li>Boule d’escargot de Bourgogne, beurre d’ail frit<span> Ou </span>Sablé de parmesan, maquereau au vinaigre et huile de bourgeon de cassis</li>
+<li>Pièce de bœuf, soubise au vin rouge, purée de pommes de terre légère<span> Ou </span>Saumon sauvage, polenta, lamier blanc et émulsion d’huile de cèpes confits</li>
+<li>Léger yaourt de lait de brebis, tomates vertes confites et herbes champêtres</li>
+<li>Crémeux de cassis, petit sablé et glace au pain d’épice<span> Ou </span>Soufflé carottes, sorbet mangue passion</li>
+</ul></div>
+  </div>
+</div><div class="field__item odd">  <h3>Expression - 65 €</h3>
+  <div class="menu-wrapper">
+    <p class="menu-description">
+      <div class="field field--name-body field--type-text-with-summary field--label-hidden"><div class="field__items"><div class="field__item even"><p>En 3 services - formule Déjeuner et Dîner</p>
+</div></div></div>    </p>
+    <div class="menu-dishes"><ul class="menu-dishes"><li>Une entrée à choisir vous même dans notre carte:
+Exemple
+Courgettes de la Tribu Loubet, Faisselle de Chèvre de la Ferme du Jointout, Basilic</li>
+<li>Un poisson à choisir vous même dans notre carte:
+Exemple
+
+Barbue de Ligne, Choux Raves de la Ferme du Jointout, Jus Vierge aux Saveurs Asiatiques et Huile de Cacahuète<span> Ou </span>Une viande à choisir vous même dans notre carte:
+Exemple: Onglet de Bœuf Angus et Foie Gras Chaud, Betteraves de Monsieur Noël,
+Jus Acidulé</li>
+<li>Un fromage à choisir vous même dans notre carte:
+ Exemple: Plateau de fromages affinés par Alain Hess<span> Ou </span>Un dessert à choisir vous même dans notre carte
+Exemple: Bavarois de Fraises de la Ferme Zacherie, Baba et Sureau</li>
+</ul></div>
+  </div>
+</div><div class="field__item even">  <h3>Empreinte - 85 €</h3>
+  <div class="menu-wrapper">
+    <p class="menu-description">
+      <div class="field field--name-body field--type-text-with-summary field--label-hidden"><div class="field__items"><div class="field__item even"><p>En 7 services-formule Déjeuner et Dîner<br />
+Ce Menu est à titre d’exemple,Les produits changent en fonction de la saison, des arrivages et de l&#039;Inspiration du Chef</p>
+</div></div></div>    </p>
+    <div class="menu-dishes"><ul class="menu-dishes"><li>Foie Gras de Canard, Magret et Girolles du Morvan de Christine</li>
+<li>Saint Pierre Juste Cuit, Gnocchis Citronnés, Velouté et Condiment d’Orties</li>
+<li>Plateau de Fromages Affinés de Bourgogne</li>
+<li>Ananas Victoria Confit, Baies Fraiches de Genièvre des Hautes Côtes de Beaune, Glace aux Bourgeons</li>
+</ul></div>
+  </div>
+</div></div></div></div>      </div>
+              <div class="node_poi-chef">
+                  <div class="node_poi_image">
+            <div class="node_poi_bg_image" style="background-image: url('https://restaurant.michelin.fr/sites/mtpb2c_fr/files/wvRoy86SJCZ7SjIQ.jpg')"></div>
+          </div>
+
+        <div class="node_poi_description">
+          <div class="field field--name-field-chef field--type-text field--label-above"><div class="field__label">Chef name&nbsp;</div><div class="field__items"><div class="field__item even">Christophe Bocquillon</div></div></div>          <div class="field field--name-field-chef-word field--type-text-long field--label-above"><div class="field__label">Chef word&nbsp;</div><div class="field__items"><div class="field__item even"><div class="readmore-summary">
+  <p>Véritable passionné de cuisine, mon seul but est "la vérité dans les assiettes".<br />
+Ma cuisine est audacieuse et créative mais accessible à tous.<br />
+Les produits que je sélectionne sont authentiques, de saison et locaux. <span>...<a href="/28u6ql7/le-jardin-des-remparts-beaune" class="readmore-link active">Voir plus</a></span></p></div>
+<div class="readmore-text" style="display:none;">
+  <p>Véritable passionné de cuisine, mon seul but est &quot;la vérité dans les assiettes&quot;.<br />
+Ma cuisine est audacieuse et créative mais accessible à tous.<br />
+Les produits que je sélectionne sont authentiques, de saison et locaux. C&#039;est en revenant à  l&#039;essence même du goût que je crée et invente mes plats chaque jour.</p>
+ <a href="/28u6ql7/le-jardin-des-remparts-beaune" class="readless-link active">Voir moins</a></div>
+</div></div></div>        </div>
+      </div>
+
+  </div>
+
+      <div class="node_poi-section" id="node_poi-guide-wrapper">
+      <div class="node_poi-guide">
+                  <h2 class="node_poi-title">
+            Guide MICHELIN 2018          </h2>
+              </div>
+
+              <div class="node_poi-inspector">
+                      <div class="field field--name-field-insp-word field--type-text-with-summary field--label-above"><div class="field__label">Inspector word&nbsp;</div><div class="field__items"><div class="field__item even">Dans cette élégante villa bourgeoise des années 1930, au pied des remparts, le jeune chef, Christophe Bocquillon, signe une cuisine tout en netteté et saveurs, où les meilleurs produits de saison dévoilent des accords originaux. Aux beaux jours, sachez que la terrasse est l'une des plus prisées de Beaune !</div></div></div>                  </div>
+        <div class="node_poi-sub-title guide-inspector">
+          <span>Le mot de l'inspecteur</span>
+        </div>
+                    <div class="node_poi-distinction-section">
+          <ul class="michelin-poi-distinctions-list"><li><div class="icon-wrapper"><span class="distinction-icon icon-mr icon-cotation1etoile red"></span></div><div class="content-wrapper">1 étoile MICHELIN : une cuisine d’une grande finesse. Vaut l’étape !</div></li>
+<li><div class="icon-wrapper"><span class="distinction-icon icon-mr icon-cotationCarteDesVins red"></span></div><div class="content-wrapper">Belle carte des vins.</div></li>
+<li><div class="icon-wrapper"><span class="distinction-icon icon-mr icon-cotation3couverts black"></span></div><div class="content-wrapper">Très bon standing.</div></li>
+</ul>        </div>
+          </div>
+
+  <div class="node_poi-section" id="node_poi-info-wrapper">
+
+          <div class="node_poi-info">
+        <h2 class="node_poi-title">
+          Informations Pratiques        </h2>
+
+                  <div class="node_poi-row">
+            <div class="node_poi-info-inside ">
+                              <div class="node_poi_image">
+                  <div class="field field--name-field-picto field--type-image field--label-hidden"><div class="field__items"><div class="field__item even"><img class="auto_image_style landscape" data-src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/poi_logo_landscape/public/mWReGBD1pYFPSwLQ.jpg?itok=bGS9QDCc" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/modules/mtpb2c/contrib/lazyloader/image_placeholder.gif" width="250" height="72" alt="" /><noscript><img class="auto_image_style landscape" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/poi_logo_landscape/public/mWReGBD1pYFPSwLQ.jpg?itok=bGS9QDCc" width="250" height="72" alt="" /></noscript></div></div></div>                </div>
+
+              <div class="node_poi_description" itemprop="description" >
+                <div class="field field--name-body field--type-text-with-summary field--label-above"><div class="field__label">Description&nbsp;</div><div class="field__items"><div class="field__item even"><div class="readmore-summary">
+  <p>Dans un décor plein de charme, le Jardin des Remparts, près des hospices de Beaune, se situe là où se dressaient les anciens remparts de la ville. Primé d’une étoile au guide MICHELIN, ce restaurant vous propose une cuisine vraie au goût<span>...<a href="/28u6ql7/le-jardin-des-remparts-beaune" class="readmore-link active">Voir plus</a></span></p></div>
+<div class="readmore-text" style="display:none;">
+  <p>Dans un décor plein de charme, le Jardin des Remparts, près des hospices de Beaune, se situe là où se dressaient les anciens remparts de la ville. Primé d’une étoile au guide MICHELIN, ce restaurant vous propose une cuisine vraie au goût du jour.</p>
+<p>Au Jardin des Remparts, le chef Christophe Bocquillon transmet sa passion et son plaisir de la gastronomie dans ses recettes. En travaillant avec des produits locaux et de saison, il fait voyager vos papilles avec sa daurade au millefeuille de radis, curcuma. Tandis que la fondante poitrine de cochon avec des aubergines à l’ail noir vous surprendra de plaisir.</p>
+<p>Le restaurant propose deux salles avec une atmosphère chic et intime. Vous pourrez également profiter d’une cheminée et de grands canapés à l’étage, au salon Bar’rock ou d’une belle terrasse ombragée en été.</p>
+<p>À deux pas de la place des Halles de Beaune, venez vous réfugier dans ce joli Jardin des Remparts pour profiter d’une cuisine authentique et inventive.</p>
+ <a href="/28u6ql7/le-jardin-des-remparts-beaune" class="readless-link active">Voir moins</a></div>
+</div></div></div>              </div>
+            </div>
+          </div>
+              </div>
+
+          <div class="node_poi-timetable node_poi-row">
+                  <div class="field field--name-field-weekly-timetable field--type-office-hours field--label-above"><div class="field__label">Horaires d&#039;ouverture&nbsp;</div><div class="field__items"><div class="field__item even"><span class="oh-wrapper"><span class="oh-display"><span class="oh-display-label" style="width: 6em; ">Lundi: </span><span class="oh-display-times oh-display-closed">Fermé<br /></span></span><span class="oh-display"><span class="oh-display-label" style="width: 6em; ">Mardi: </span><span class="oh-display-times oh-display-hours">19:00-21:30<br /></span></span><span class="oh-display"><span class="oh-display-label" style="width: 6em; ">Mercredi: </span><span class="oh-display-times oh-display-hours">12:00-13:30, 19:00-21:30<br /></span></span><span class="oh-display"><span class="oh-display-label" style="width: 6em; ">Jeudi: </span><span class="oh-display-times oh-display-hours">12:00-13:30, 19:00-21:30<br /></span></span><span class="oh-display"><span class="oh-display-label" style="width: 6em; ">Vendredi: </span><span class="oh-display-times oh-display-hours">12:00-13:30, 19:00-21:30<br /></span></span><span class="oh-display"><span class="oh-display-label" style="width: 6em; ">Samedi: </span><span class="oh-display-times oh-display-hours oh-display-current">12:00-13:30, 19:00-21:30<br /></span></span><span class="oh-display"><span class="oh-display-label" style="width: 6em; ">Dimanche: </span><span class="oh-display-times oh-display-closed">Fermé<br /></span></span></span></div></div></div>
+              </div>
+
+          <div class="node_poi-location node_poi-row">
+        <div class="node_poi-sub-title">Localisation</div>
+                  <div class="field field--name-field-address field--type-addressfield field--label-hidden"><div class="field__items"><div class="field__item even"><div class="street-block"><div class="thoroughfare">10 rue Hôtel-Dieu</div></div><div class="addressfield-container-inline locality-block country-FR"><span class="postal-code">21200</span> <span class="locality">Beaune</span></div><span class="country">France</span></div></div></div>                                  <div id="michelin-poi-map" class="michelin-poi-map" style="height:380px;"></div>              </div>
+
+          <div class="node_poi-contact node_poi-row node_poi-general">
+        <div class='node_poi-sub-title'>
+          Coordonnées        </div>
+        <div class="full-display-contact-details">
+          <div class="tel"><a href="tel:+33 380247941">03 80 24 79 41</a></div>
+          <div class="website"><div class="field field--name-field-website field--type-url field--label-hidden"><div class="field__items"><div class="field__item even"><a href="http://www.le-jardin-des-remparts.com" target="_blank">http://www.le-jardin-des-remparts.com</a></div></div></div></div>
+        </div>
+      </div>
+
+          <div class="node_poi-services node_poi-row node_poi-general">
+        <div class="field field--name-field-services field--type-entityreference field--label-above"><div class="field__label">Services&nbsp;</div><div class="field__items"><div class="field__item even">Air Conditionné</div><div class="field__item odd">Banquet</div><div class="field__item even">Groupes acceptés</div><div class="field__item odd">Parking</div><div class="field__item even">Salon pour repas privés</div><div class="field__item odd">Repas servi en terrasse</div><div class="field__item even">Non fumeur</div></div></div>      </div>
+
+          <div class="node_poi-languages node_poi-row node_poi-general">
+        <div class="field field--name-field-languages field--type-entityreference field--label-above"><div class="field__label">Langues parlées&nbsp;</div><div class="field__items"><div class="field__item even">Anglais</div><div class="field__item odd">Espagnol</div></div></div>      </div>
+
+          <div class="node_poi-payment node_poi-row node_poi-general">
+        <div class="field field--name-field-payment-type field--type-entityreference field--label-above"><div class="field__label">Moyens de paiement&nbsp;</div><div class="field__items"><div class="field__item even">Amex</div><div class="field__item odd">Chèque</div><div class="field__item even">Espèces</div><div class="field__item odd">Mastercard</div><div class="field__item even">Visa</div></div></div>      </div>
+
+          <div class="node_poi-ambiance node_poi-row node_poi-general">
+        <div class="field field--name-field-ambiance field--type-entityreference field--label-above"><div class="field__label">Ambiance&nbsp;</div><div class="field__items"><div class="field__item even">Terrasse</div></div></div>      </div>
+
+
+  </div>
+
+      <div class="node_poi-section" id="node_poi-review-wrapper">
+      <h2 class="node_poi-title">
+        Avis      </h2>
+      <div class="node_poi-review node_poi-row">
+        <div class="node_poi-subtitle">
+          Note moyenne :        </div>
+        <div class="node_poi-avg-rating">
+            <span class="star"><ul class="review-stars"><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="D icon-mr icon-cercle02 last"></li></ul></span>
+            <span class="avg-rating-points">
+              4.3/5            </span>
+            <span class="rating-count">59 avis sur ce restaurant</span>
+        </div>
+        <div class="node_poi-restaurant-rating">
+                      <div class="node_poi-col">
+              <div class="node_poi-subtitle">
+                Qualité de la table              </div>
+              <div class="poi_node-items-rating">
+                <span class="star"><ul class="review-stars"><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="D icon-mr icon-cercle02 last"></li></ul></span>
+                <span class="avg-rating-points">
+                    4.2/5                </span>
+              </div>
+            </div>
+                                <div class="node_poi-col">
+              <div class="node_poi-subtitle">
+                Service              </div>
+              <div class="poi_node-items-rating">
+                <span class="star"><ul class="review-stars"><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="D icon-mr icon-cercle02 last"></li></ul></span>
+                <span class="avg-rating-points">
+                    4.4/5                </span>
+              </div>
+            </div>
+                                <div class="node_poi-col">
+              <div class="node_poi-subtitle">
+                Cadre              </div>
+              <div class="poi_node-items-rating">
+                <span class="star"><ul class="review-stars"><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="D icon-mr icon-cercle02 last"></li></ul></span>
+                <span class="avg-rating-points">
+                    4.4/5                </span>
+              </div>
+            </div>
+                                <div class="node_poi-col">
+              <div class="node_poi-subtitle">
+                Rapport qualité/prix              </div>
+              <div class="poi_node-items-rating">
+                <span class="star"><ul class="review-stars"><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="D icon-mr icon-cercle02 last"></li></ul></span>
+                <span class="avg-rating-points">
+                    4.1/5                </span>
+              </div>
+            </div>
+                                <div class="node_poi-col">
+              <div class="node_poi-subtitle">
+                Ambiance              </div>
+              <div class="poi_node-items-rating">
+                <span class="star"><ul class="review-stars"><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="D icon-mr icon-cercle02 last"></li></ul></span>
+                <span class="avg-rating-points">
+                    4.5/5                </span>
+              </div>
+            </div>
+                                <div class="node_poi-col">
+              <div class="node_poi-subtitle">
+                Boissons              </div>
+              <div class="poi_node-items-rating">
+                <span class="star"><ul class="review-stars"><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="D icon-mr icon-cercle02 last"></li></ul></span>
+                <span class="avg-rating-points">
+                    4.3/5                </span>
+              </div>
+            </div>
+                  </div>
+      </div>
+    </div>
+
+  <div class="poi_nide-microdata">
+    <div class="seo_microdata_wrapper"><meta itemprop="image" content="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/Le%20Jardin%20des%20Remparts_Beaune_1.jpg" />
+<meta itemprop="acceptsReservations" content="Yes" />
+<meta itemprop="map" content="https://maps.google.com/?q=47.021200000000,4.837480000000&amp;amp;sensor=false" />
+<div itemprop="geo" itemscope="" itemtype="http://schema.org/GeoCoordinates"><meta itemprop="latitude" content="47.021200000000" />
+<meta itemprop="longitude" content="4.837480000000" />
+</div><div itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating"><meta itemprop="ratingValue" content="4.3" />
+<meta itemprop="reviewCount" content="59" />
+</div></div>  </div>
+
+</div>
+
+  <script type="application/ld+json">
+    {
+    "@context": "http://schema.org",
+    "@type": "Restaurant",
+    "@id": "https://restaurant.michelin.fr/28u6ql7/le-jardin-des-remparts-beaune",
+    "name": "Le Jardin des Remparts",
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "10 rue H\u00f4tel-Dieu",
+        "addressLocality": "Beaune",
+        "postalCode": "21200",
+        "addressCountry": "FR"
+    },
+    "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "47.021200000000",
+        "longitude": "4.837480000000"
+    },
+    "telephone": "+33 380247941",
+    "image": "https://restaurant.michelin.fr/sites/mtpb2c_fr/files/Le%20Jardin%20des%20Remparts_Beaune_1.jpg",
+    "priceRange": "Prix - De 32 \u20ac \u00e0 100 \u20ac",
+    "servesCuisine": "Cuisine Moderne, Cr\u00e9ative; V\u00e9g\u00e9tarien; V\u00e9g\u00e9talien",
+    "potentialAction": {
+        "@type": "ReserveAction",
+        "result": {
+            "@type": "FoodEstablishmentReservation",
+            "name": "Reserve table"
+        },
+        "target": [
+            {
+                "@type": "EntryPoint",
+                "actionPlatform": [
+                    "http://schema.org/DesktopWebPlatform",
+                    "http://schema.org/MobileWebPlatform"
+                ],
+                "inLanguage": [
+                    "fr-fr"
+                ],
+                "url": "https://restaurant.michelin.fr/28u6ql7/le-jardin-des-remparts-beaune?indirect=182"
+            }
+        ]
+    }
+}
+  </script>
+          </div>
+</div>
+<div class="panel-pane pane-views pane-customer-reviews">
+  <div class="panel-pane-inside">
+                        <div class="view view-customer-reviews view-id-customer_reviews view-display-id-default view-dom-id-b913cbce8b2649307f34ba942453c792">
+
+      <div class="view-filters">
+      <form class="ctools-auto-submit-full-form views-exposed-form-customer-reviews-default" action="/" method="get" id="views-exposed-form-customer-reviews-default" accept-charset="UTF-8"><div><div class="views-exposed-form">
+  <div class="views-exposed-widgets clearfix">
+          <div id="edit-sort-bef-combine-wrapper" class="views-exposed-widget views-widget-sort-sort_bef_combine">
+                        <div class="views-widget">
+          <div class="form-item form-type-select form-item-sort-bef-combine">
+  <label for="edit-sort-bef-combine">Trier par  </label>
+ <select class="use-select-2 form-select" id="edit-sort-bef-combine" name="sort_bef_combine"><option value="field_meal_date_value ASC">Du plus ancien au plus récent
+</option><option value="field_meal_date_value DESC" selected="selected">Du plus récent au plus ancien
+</option><option value="field_rating_rating ASC">De la moins bonne notation à la meilleure</option><option value="field_rating_rating DESC">De la meilleure notation à la moins bonne
+</option></select>
+</div>
+        </div>
+              </div>
+                    <div class="views-exposed-widget views-submit-button">
+      <input class="ctools-use-ajax ctools-auto-submit-click js-hide form-submit" type="submit" id="edit-submit-customer-reviews" name="" value="Apply" />    </div>
+      </div>
+</div>
+</div></form>    </div>
+
+
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first">
+
+<div  class="ds-1col node node--customer-review node--promoted node-teaser view-mode-teaser node--teaser node--customer-review--teaser clearfix">
+  <div class="node_customer_review-wrapper" itemprop="review" itemscope itemtype="http://schema.org/Review">
+    <meta itemprop="datePublished" content="02-17-2018"/>
+    <div class="node_customer_review-rating">
+      <div class="node_customer_review-star">
+        <ul class="review-stars"><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03 last"></li></ul>      </div>
+      <div class="node_customer_review-avg-rating" itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
+          <div itemprop="ratingValue"><div class="field field--name-field-rating field--type-fivestar field--label-hidden"><div class="field__items"><div class="field__item even"><div class="clearfix">5/5</div></div></div></div></div>
+      </div>
+      <div class="node_customer_review-rating-desc" itemprop="author" itemscope itemtype=http://schema.org/Person>
+        <meta itemprop="name" content="ANONYME"/>
+        <div class="node_customer_review-rating-by">
+          Avis de ANONYME le 17/02/2018        </div>
+      </div>
+    </div>
+    <meta itemprop="contentLocation" content="EPINAL"/>
+    <div class="node_customer_review-rating-items">
+              <div class="node_customer_review-rating-table node_customer-col">
+          <span class="rating-value"><div class="field field--name-field-table-quality-rating field--type-fivestar field--label-hidden"><div class="field__items"><div class="field__item even"><div class="clearfix">5/5</div></div></div></div></span>
+          <span class="customer_review-label">Qualité de la table</span>
+        </div>
+                    <div class="node_customer_review-rating-service node_customer-col">
+          <span class="rating-value"><div class="field field--name-field-service-rating field--type-fivestar field--label-hidden"><div class="field__items"><div class="field__item even"><div class="clearfix">5/5</div></div></div></div></span>
+          <span class="customer_review-label">Service</span>
+        </div>
+                    <div class="node_customer_review-rating-infra node_customer-col">
+          <span class="rating-value"><div class="field field--name-field-surrounding-quality-rating field--type-fivestar field--label-hidden"><div class="field__items"><div class="field__item even"><div class="clearfix">5/5</div></div></div></div></span>
+          <span class="customer_review-label">Cadre</span>
+        </div>
+                    <div class="node_customer_review-rating-ratio node_customer-col">
+          <span class="rating-value"><div class="field field--name-field-quality-price-ratio-rating field--type-fivestar field--label-hidden"><div class="field__items"><div class="field__item even"><div class="clearfix">5/5</div></div></div></div></span>
+          <span class="customer_review-label">Rapport qualité/prix</span>
+        </div>
+                    <div class="node_customer_review-rating-ambiance node_customer-col">
+          <span class="rating-value"><div class="field field--name-field-ambiance-rating field--type-fivestar field--label-hidden"><div class="field__items"><div class="field__item even"><div class="clearfix">5/5</div></div></div></div></span>
+          <span class="customer_review-label">Ambiance</span>
+        </div>
+                    <div class="node_customer_review-rating-drinks node_customer-col">
+          <span class="rating-value"><div class="field field--name-field-drinks-rating field--type-fivestar field--label-hidden"><div class="field__items"><div class="field__item even"><div class="clearfix">5/5</div></div></div></div></span>
+          <span class="customer_review-label">Boissons</span>
+        </div>
+          </div>
+    <div class="node_customer_review-text" itemprop="reviewBody"><div class="field field--name-field-text-review field--type-text-long field--label-hidden"><div class="field__items"><div class="field__item even">Très bel endroit, dans une belle demeure, service impeccable, chaleureux, plats très fins et délicieux</div></div></div></div>
+
+    <div class="node_customer_review-answer">
+          </div>
+  </div>
+</div>
+  </div>
+  <div class="views-row views-row-2 views-row-even">
+
+<div  class="ds-1col node node--customer-review node--promoted node-teaser view-mode-teaser node--teaser node--customer-review--teaser clearfix">
+  <div class="node_customer_review-wrapper" itemprop="review" itemscope itemtype="http://schema.org/Review">
+    <meta itemprop="datePublished" content="09-01-2017"/>
+    <div class="node_customer_review-rating">
+      <div class="node_customer_review-star">
+        <ul class="review-stars"><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03 last"></li></ul>      </div>
+      <div class="node_customer_review-avg-rating" itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
+          <div itemprop="ratingValue"><div class="field field--name-field-rating field--type-fivestar field--label-hidden"><div class="field__items"><div class="field__item even"><div class="clearfix">5/5</div></div></div></div></div>
+      </div>
+      <div class="node_customer_review-rating-desc" itemprop="author" itemscope itemtype=http://schema.org/Person>
+        <meta itemprop="name" content="Eric Fiorito"/>
+        <div class="node_customer_review-rating-by">
+          Avis de Eric Fiorito le 01/09/2017        </div>
+      </div>
+    </div>
+    <meta itemprop="contentLocation" content="oullins"/>
+    <div class="node_customer_review-rating-items">
+              <div class="node_customer_review-rating-table node_customer-col">
+          <span class="rating-value"><div class="field field--name-field-table-quality-rating field--type-fivestar field--label-hidden"><div class="field__items"><div class="field__item even"><div class="clearfix">5/5</div></div></div></div></span>
+          <span class="customer_review-label">Qualité de la table</span>
+        </div>
+                    <div class="node_customer_review-rating-service node_customer-col">
+          <span class="rating-value"><div class="field field--name-field-service-rating field--type-fivestar field--label-hidden"><div class="field__items"><div class="field__item even"><div class="clearfix">5/5</div></div></div></div></span>
+          <span class="customer_review-label">Service</span>
+        </div>
+                    <div class="node_customer_review-rating-infra node_customer-col">
+          <span class="rating-value"><div class="field field--name-field-surrounding-quality-rating field--type-fivestar field--label-hidden"><div class="field__items"><div class="field__item even"><div class="clearfix">5/5</div></div></div></div></span>
+          <span class="customer_review-label">Cadre</span>
+        </div>
+                    <div class="node_customer_review-rating-ratio node_customer-col">
+          <span class="rating-value"><div class="field field--name-field-quality-price-ratio-rating field--type-fivestar field--label-hidden"><div class="field__items"><div class="field__item even"><div class="clearfix">5/5</div></div></div></div></span>
+          <span class="customer_review-label">Rapport qualité/prix</span>
+        </div>
+                    <div class="node_customer_review-rating-ambiance node_customer-col">
+          <span class="rating-value"><div class="field field--name-field-ambiance-rating field--type-fivestar field--label-hidden"><div class="field__items"><div class="field__item even"><div class="clearfix">4/5</div></div></div></div></span>
+          <span class="customer_review-label">Ambiance</span>
+        </div>
+                    <div class="node_customer_review-rating-drinks node_customer-col">
+          <span class="rating-value"><div class="field field--name-field-drinks-rating field--type-fivestar field--label-hidden"><div class="field__items"><div class="field__item even"><div class="clearfix">5/5</div></div></div></div></span>
+          <span class="customer_review-label">Boissons</span>
+        </div>
+          </div>
+    <div class="node_customer_review-text" itemprop="reviewBody"><div class="field field--name-field-text-review field--type-text-long field--label-hidden"><div class="field__items"><div class="field__item even">Très belle prestation pour ce jeune chef. Créatif, mélant sur certains plats tradition et innovation. Cuisson parfaitement maitrisée. Sommelière au top, très belle carte de vin et bon conseil.Maître d&#039;hôtel parfait. Belle salle de restaurant. Chef très sympathique.</div></div></div></div>
+
+    <div class="node_customer_review-answer">
+          </div>
+  </div>
+</div>
+  </div>
+  <div class="views-row views-row-3 views-row-odd">
+
+<div  class="ds-1col node node--customer-review node--promoted node-teaser view-mode-teaser node--teaser node--customer-review--teaser clearfix">
+  <div class="node_customer_review-wrapper" itemprop="review" itemscope itemtype="http://schema.org/Review">
+    <meta itemprop="datePublished" content="08-31-2017"/>
+    <div class="node_customer_review-rating">
+      <div class="node_customer_review-star">
+        <ul class="review-stars"><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03 last"></li></ul>      </div>
+      <div class="node_customer_review-avg-rating" itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
+          <div itemprop="ratingValue"><div class="field field--name-field-rating field--type-fivestar field--label-hidden"><div class="field__items"><div class="field__item even"><div class="clearfix">5/5</div></div></div></div></div>
+      </div>
+      <div class="node_customer_review-rating-desc" itemprop="author" itemscope itemtype=http://schema.org/Person>
+        <meta itemprop="name" content="Bruno De la rivière"/>
+        <div class="node_customer_review-rating-by">
+          Avis de Bruno De la rivière le 31/08/2017        </div>
+      </div>
+    </div>
+    <meta itemprop="contentLocation" content="St Germain du puch"/>
+    <div class="node_customer_review-rating-items">
+              <div class="node_customer_review-rating-table node_customer-col">
+          <span class="rating-value"><div class="field field--name-field-table-quality-rating field--type-fivestar field--label-hidden"><div class="field__items"><div class="field__item even"><div class="clearfix">5/5</div></div></div></div></span>
+          <span class="customer_review-label">Qualité de la table</span>
+        </div>
+                    <div class="node_customer_review-rating-service node_customer-col">
+          <span class="rating-value"><div class="field field--name-field-service-rating field--type-fivestar field--label-hidden"><div class="field__items"><div class="field__item even"><div class="clearfix">5/5</div></div></div></div></span>
+          <span class="customer_review-label">Service</span>
+        </div>
+                    <div class="node_customer_review-rating-infra node_customer-col">
+          <span class="rating-value"><div class="field field--name-field-surrounding-quality-rating field--type-fivestar field--label-hidden"><div class="field__items"><div class="field__item even"><div class="clearfix">5/5</div></div></div></div></span>
+          <span class="customer_review-label">Cadre</span>
+        </div>
+                    <div class="node_customer_review-rating-ratio node_customer-col">
+          <span class="rating-value"><div class="field field--name-field-quality-price-ratio-rating field--type-fivestar field--label-hidden"><div class="field__items"><div class="field__item even"><div class="clearfix">4/5</div></div></div></div></span>
+          <span class="customer_review-label">Rapport qualité/prix</span>
+        </div>
+                    <div class="node_customer_review-rating-ambiance node_customer-col">
+          <span class="rating-value"><div class="field field--name-field-ambiance-rating field--type-fivestar field--label-hidden"><div class="field__items"><div class="field__item even"><div class="clearfix">5/5</div></div></div></div></span>
+          <span class="customer_review-label">Ambiance</span>
+        </div>
+                    <div class="node_customer_review-rating-drinks node_customer-col">
+          <span class="rating-value"><div class="field field--name-field-drinks-rating field--type-fivestar field--label-hidden"><div class="field__items"><div class="field__item even"><div class="clearfix">4/5</div></div></div></div></span>
+          <span class="customer_review-label">Boissons</span>
+        </div>
+          </div>
+    <div class="node_customer_review-text" itemprop="reviewBody"><div class="field field--name-field-text-review field--type-text-long field--label-hidden"><div class="field__items"><div class="field__item even">Excellente soirée. Nous avions choisi le repas à 5 plats. Tout était excellent, fin, complexe avec beaucoup de saveurs. Le service était efficace rythmé et soigné sans être pesant. Le conseil sur le vin de bourgogne que nous connaissons peu bien pertinent. En conclusion un bon rapport qualité prix, avec un macaron très mérité </div></div></div></div>
+
+    <div class="node_customer_review-answer">
+          </div>
+  </div>
+</div>
+  </div>
+  <div class="views-row views-row-4 views-row-even">
+
+<div  class="ds-1col node node--customer-review node--promoted node-teaser view-mode-teaser node--teaser node--customer-review--teaser clearfix">
+  <div class="node_customer_review-wrapper" itemprop="review" itemscope itemtype="http://schema.org/Review">
+    <meta itemprop="datePublished" content="08-21-2017"/>
+    <div class="node_customer_review-rating">
+      <div class="node_customer_review-star">
+        <ul class="review-stars"><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03 last"></li></ul>      </div>
+      <div class="node_customer_review-avg-rating" itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
+          <div itemprop="ratingValue"><div class="field field--name-field-rating field--type-fivestar field--label-hidden"><div class="field__items"><div class="field__item even"><div class="clearfix">5/5</div></div></div></div></div>
+      </div>
+      <div class="node_customer_review-rating-desc" itemprop="author" itemscope itemtype=http://schema.org/Person>
+        <meta itemprop="name" content="Claude Servien"/>
+        <div class="node_customer_review-rating-by">
+          Avis de Claude Servien le 21/08/2017        </div>
+      </div>
+    </div>
+    <meta itemprop="contentLocation" content="fromont"/>
+    <div class="node_customer_review-rating-items">
+              <div class="node_customer_review-rating-table node_customer-col">
+          <span class="rating-value"><div class="field field--name-field-table-quality-rating field--type-fivestar field--label-hidden"><div class="field__items"><div class="field__item even"><div class="clearfix">5/5</div></div></div></div></span>
+          <span class="customer_review-label">Qualité de la table</span>
+        </div>
+                    <div class="node_customer_review-rating-service node_customer-col">
+          <span class="rating-value"><div class="field field--name-field-service-rating field--type-fivestar field--label-hidden"><div class="field__items"><div class="field__item even"><div class="clearfix">5/5</div></div></div></div></span>
+          <span class="customer_review-label">Service</span>
+        </div>
+                    <div class="node_customer_review-rating-infra node_customer-col">
+          <span class="rating-value"><div class="field field--name-field-surrounding-quality-rating field--type-fivestar field--label-hidden"><div class="field__items"><div class="field__item even"><div class="clearfix">3/5</div></div></div></div></span>
+          <span class="customer_review-label">Cadre</span>
+        </div>
+                    <div class="node_customer_review-rating-ratio node_customer-col">
+          <span class="rating-value"><div class="field field--name-field-quality-price-ratio-rating field--type-fivestar field--label-hidden"><div class="field__items"><div class="field__item even"><div class="clearfix">5/5</div></div></div></div></span>
+          <span class="customer_review-label">Rapport qualité/prix</span>
+        </div>
+                    <div class="node_customer_review-rating-ambiance node_customer-col">
+          <span class="rating-value"><div class="field field--name-field-ambiance-rating field--type-fivestar field--label-hidden"><div class="field__items"><div class="field__item even"><div class="clearfix">5/5</div></div></div></div></span>
+          <span class="customer_review-label">Ambiance</span>
+        </div>
+                    <div class="node_customer_review-rating-drinks node_customer-col">
+          <span class="rating-value"><div class="field field--name-field-drinks-rating field--type-fivestar field--label-hidden"><div class="field__items"><div class="field__item even"><div class="clearfix">5/5</div></div></div></div></span>
+          <span class="customer_review-label">Boissons</span>
+        </div>
+          </div>
+    <div class="node_customer_review-text" itemprop="reviewBody"><div class="field field--name-field-text-review field--type-text-long field--label-hidden"><div class="field__items"><div class="field__item even">le menu Empreinte avec vin au verre est exceptionnel par sa créativité et ses plats, digne d&#039;un deux étoiles avec des prix raisonnables car il n&#039;y a pas de produit de &quot;luxe&quot;(truffe, caviar..)</div></div></div></div>
+
+    <div class="node_customer_review-answer">
+          </div>
+  </div>
+</div>
+  </div>
+  <div class="views-row views-row-5 views-row-odd views-row-last">
+
+<div  class="ds-1col node node--customer-review node--promoted node-teaser view-mode-teaser node--teaser node--customer-review--teaser clearfix">
+  <div class="node_customer_review-wrapper" itemprop="review" itemscope itemtype="http://schema.org/Review">
+    <meta itemprop="datePublished" content="06-21-2017"/>
+    <div class="node_customer_review-rating">
+      <div class="node_customer_review-star">
+        <ul class="review-stars"><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="N icon-mr icon-cercle01 last"></li></ul>      </div>
+      <div class="node_customer_review-avg-rating" itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
+          <div itemprop="ratingValue"><div class="field field--name-field-rating field--type-fivestar field--label-hidden"><div class="field__items"><div class="field__item even"><div class="clearfix">4/5</div></div></div></div></div>
+      </div>
+      <div class="node_customer_review-rating-desc" itemprop="author" itemscope itemtype=http://schema.org/Person>
+        <meta itemprop="name" content="Anonyme"/>
+        <div class="node_customer_review-rating-by">
+          Avis de Anonyme le 21/06/2017        </div>
+      </div>
+    </div>
+    <meta itemprop="contentLocation" content="Paris"/>
+    <div class="node_customer_review-rating-items">
+              <div class="node_customer_review-rating-table node_customer-col">
+          <span class="rating-value"><div class="field field--name-field-table-quality-rating field--type-fivestar field--label-hidden"><div class="field__items"><div class="field__item even"><div class="clearfix">4/5</div></div></div></div></span>
+          <span class="customer_review-label">Qualité de la table</span>
+        </div>
+                    <div class="node_customer_review-rating-service node_customer-col">
+          <span class="rating-value"><div class="field field--name-field-service-rating field--type-fivestar field--label-hidden"><div class="field__items"><div class="field__item even"><div class="clearfix">5/5</div></div></div></div></span>
+          <span class="customer_review-label">Service</span>
+        </div>
+                    <div class="node_customer_review-rating-infra node_customer-col">
+          <span class="rating-value"><div class="field field--name-field-surrounding-quality-rating field--type-fivestar field--label-hidden"><div class="field__items"><div class="field__item even"><div class="clearfix">5/5</div></div></div></div></span>
+          <span class="customer_review-label">Cadre</span>
+        </div>
+                    <div class="node_customer_review-rating-ratio node_customer-col">
+          <span class="rating-value"><div class="field field--name-field-quality-price-ratio-rating field--type-fivestar field--label-hidden"><div class="field__items"><div class="field__item even"><div class="clearfix">5/5</div></div></div></div></span>
+          <span class="customer_review-label">Rapport qualité/prix</span>
+        </div>
+                    <div class="node_customer_review-rating-ambiance node_customer-col">
+          <span class="rating-value"><div class="field field--name-field-ambiance-rating field--type-fivestar field--label-hidden"><div class="field__items"><div class="field__item even"><div class="clearfix">5/5</div></div></div></div></span>
+          <span class="customer_review-label">Ambiance</span>
+        </div>
+                    <div class="node_customer_review-rating-drinks node_customer-col">
+          <span class="rating-value"><div class="field field--name-field-drinks-rating field--type-fivestar field--label-hidden"><div class="field__items"><div class="field__item even"><div class="clearfix">3/5</div></div></div></div></span>
+          <span class="customer_review-label">Boissons</span>
+        </div>
+          </div>
+    <div class="node_customer_review-text" itemprop="reviewBody"><div class="field field--name-field-text-review field--type-text-long field--label-hidden"><div class="field__items"><div class="field__item even">Tres beau restaurant , terrasse tres agreable. Bon service. Menu d ici et d ailleurs 35e par pers hors boissons: tres bon qualité-prix. Je trouve le prix du verre de vin un peu cher. Belle carte de vins. </div></div></div></div>
+
+    <div class="node_customer_review-answer">
+          </div>
+  </div>
+</div>
+  </div>
+    </div>
+
+      <div class="pager-wrapper"><div class="item-list-first"><div class="item-list"><ul class="pager mr-pager-first-level-links"><li class="mr-pager-item  active first"><span  class="mr-pager-link active" attr-page-number="1">1</span></li>
+<li class="mr-pager-item"><a href="/28u6ql7/le-jardin-des-remparts-beaune?page=2"  class="mr-pager-link" attr-page-number="2">2</a></li>
+<li class="mr-pager-item"><a href="/28u6ql7/le-jardin-des-remparts-beaune?page=3"  class="mr-pager-link" attr-page-number="3">3</a></li>
+<li class="mr-pager-item"><a href="/28u6ql7/le-jardin-des-remparts-beaune?page=4"  class="mr-pager-link" attr-page-number="4">4</a></li>
+<li class="mr-pager-item"><a href="/28u6ql7/le-jardin-des-remparts-beaune?page=5"  class="mr-pager-link" attr-page-number="5">5</a></li>
+<li class="mr-pager-item"><a href="/28u6ql7/le-jardin-des-remparts-beaune?page=6"  class="mr-pager-link" attr-page-number="6">6</a></li>
+<li class="mr-pager-item"><a href="/28u6ql7/le-jardin-des-remparts-beaune?page=7"  class="mr-pager-link" attr-page-number="7">7</a></li>
+<li class="mr-pager-item"><a href="/28u6ql7/le-jardin-des-remparts-beaune?page=8"  class="mr-pager-link" attr-page-number="8">8</a></li>
+<li class="mr-pager-item"><a href="/28u6ql7/le-jardin-des-remparts-beaune?page=9"  class="mr-pager-link" attr-page-number="9">9</a></li>
+<li class="mr-pager-item"><a href="/28u6ql7/le-jardin-des-remparts-beaune?page=10"  class="mr-pager-link" attr-page-number="10">10</a></li>
+<li class="mr-pager-item mr-pager-placeholder">...</li>
+<li class="mr-pager-item"><a href="/28u6ql7/le-jardin-des-remparts-beaune?page=12"  class="mr-pager-link" attr-page-number="12">12</a></li>
+<li class="mr-pager-item last"><span href="/28u6ql7/le-jardin-des-remparts-beaune?page=12"  class="mr-pager-link mr-pager-link-next" attr-page-number="2" attr-vsm="LzI4dTZxbDcvbGUtamFyZGluLWRlcy1yZW1wYXJ0cy1iZWF1bmU/cGFnZT0y">&raquo;</span></li>
+</ul></div></div></div>
+
+
+
+
+</div>          </div>
+</div>
+      </div>
+
+      <div class="panels-content-main-sidebar">
+              </div>
+
+    </div>
+  </div>
+  <!-- /.panels-content-main-regiontwo-->
+
+      <div class="panels-content-bottom-wrapper">
+      <div class="panel-panel panels-content-bottom">
+        <div class="panel-pane pane-block pane-ft-b2c-poi-ft-b2c-poi-nearby-restaurant">
+  <div class="panel-pane-inside">
+                  <h2 class="pane-title">
+      &nbsp;    </h2>
+                <div class="element-invisible"><a href="/poi-nearby/355797" class="use-ajax"></a></div>          </div>
+</div>
+<div class="panel-pane pane-block pane-ft-b2c-poi-ft-b2c-poi-nearby-poi-more-link">
+  <div class="panel-pane-inside">
+                        &nbsp;          </div>
+</div>
+      </div>
+    </div>
+
+</div>
+      </div>
+    </div>
+
+          <div class="l-main-suffix">
+          <div class="l-region l-region--main-suffix">
+    <div id="block-views-city-list-inline-city-top" class="block block--views block--views-city-list-inline-city-top">
+        <h2  class="block__title">Top Villes</h2>
+      <div class="block__content">
+    <div class="view view-city-list view-id-city_list view-display-id-inline_city_top view-dom-id-343f16db6cd12acf5b083ff9dd404a5a">
+
+
+
+      <div class="view-content">
+        <div class="views-row-odd views-row-first">
+    <div  class="ds-1col node node--city view-mode-inline node--inline node--city--inline clearfix">
+
+
+  <div class="field field--name-field-link field--type-link-field field--label-hidden"><div class="field__items"><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/paris">Paris</a></div></div></div></div>
+
+  </div>
+  <div class="views-row-even">
+    <div  class="ds-1col node node--city view-mode-inline node--inline node--city--inline clearfix">
+
+
+  <div class="field field--name-field-link field--type-link-field field--label-hidden"><div class="field__items"><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/bordeaux">Bordeaux</a></div></div></div></div>
+
+  </div>
+  <div class="views-row-odd">
+    <div  class="ds-1col node node--city view-mode-inline node--inline node--city--inline clearfix">
+
+
+  <div class="field field--name-field-link field--type-link-field field--label-hidden"><div class="field__items"><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/nantes">Nantes</a></div></div></div></div>
+
+  </div>
+  <div class="views-row-even">
+    <div  class="ds-1col node node--city view-mode-inline node--inline node--city--inline clearfix">
+
+
+  <div class="field field--name-field-link field--type-link-field field--label-hidden"><div class="field__items"><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/strasbourg">Strasbourg</a></div></div></div></div>
+
+  </div>
+  <div class="views-row-odd">
+    <div  class="ds-1col node node--city view-mode-inline node--inline node--city--inline clearfix">
+
+
+  <div class="field field--name-field-link field--type-link-field field--label-hidden"><div class="field__items"><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/lyon">Lyon</a></div></div></div></div>
+
+  </div>
+  <div class="views-row-even views-row-last">
+    <div  class="ds-1col node node--city view-mode-inline node--inline node--city--inline clearfix">
+
+
+  <div class="field field--name-field-link field--type-link-field field--label-hidden"><div class="field__items"><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/lille">Lille</a></div></div></div></div>
+
+  </div>
+    </div>
+
+
+      <div class="attachment attachment-after">
+      <a href="/recherche-restaurants" class="restaurant-directory-link">Annuaire des restaurants</a>    </div>
+
+
+
+
+</div>  </div>
+</div>
+  </div>
+      </div>
+
+    <footer class="l-footer" role="contentinfo">
+      <div class="l-footer-inner">
+        <div class="l-footer-top">
+                  </div>
+        <div class="l-footer-top-suffix">
+                  </div>
+        <div class="l-footer-middle">
+            <div class="l-region l-region--footer-middle">
+    <nav id="block-menu-menu-corporate-menu-1" role="navigation" class="block block--menu block--menu-menu-corporate-menu-1">
+      <div  class="block__title">Restaurateurs</div>
+
+  <ul class="menu"><li class="first leaf"><a href="http://gastronomie.bookatable.fr/" target="_blank">Découvrez nos offres</a></li>
+<li class="last leaf"><a href="https://login.bookatable.com/login?language=fr-FR" target="_blank">Connectez-vous</a></li>
+</ul></nav>
+<nav id="block-menu-menu-corporate-menu-2" role="navigation" class="block block--menu block--menu-menu-corporate-menu-2">
+      <div  class="block__title">Suivez-nous</div>
+
+  <ul class="menu"><li class="first leaf"><a href="https://www.facebook.com/guideMICHELINfr/" target="_blank">Sur Facebook</a></li>
+<li class="leaf"><a href="https://www.youtube.com/user/MichelinRestaurants" target="_blank">Sur Youtube</a></li>
+<li class="leaf"><a href="https://www.instagram.com/michelinguide/">Sur Instagram</a></li>
+<li class="last leaf"><a href="https://twitter.com/guideMichelinFR" target="_blank">Sur Twitter</a></li>
+</ul></nav>
+<nav id="block-menu-menu-corporate-menu-3" role="navigation" class="block block--menu block--menu-menu-corporate-menu-3">
+      <div  class="block__title">Nos autres services</div>
+
+  <ul class="menu"><li class="first leaf"><a href="https://bda.bookatable.com/Mobile/CancelBooking?inIframe=False&amp;cid=INTL-BOOKATABLEMASTER:76677&amp;lang=fr-FR" target="_blank">Annulez une réservation</a></li>
+<li class="leaf"><a href="http://www.bookatable.co.uk/" target="_blank">Réservez en Angleterre</a></li>
+<li class="last leaf"><a href="https://www.bookatable.com/de" target="_blank">Réservez en Allemagne</a></li>
+</ul></nav>
+<nav id="block-menu-menu-corporate-menu-4" role="navigation" class="block block--menu block--menu-menu-corporate-menu-4">
+      <div  class="block__title">MICHELIN GROUPE</div>
+
+  <ul class="menu"><li class="first leaf"><a href="http://www.michelin.fr/lentreprise/michelin-en-france" target="_blank">L&#039;entreprise Michelin</a></li>
+<li class="leaf"><a href="http://www.michelin.fr/pneus/pneu-auto?gclid=CK7W2L-OitACFRa3Gwods08GpQ&amp;gclsrc=aw.ds#type=type_2" target="_blank">Les pneus Michelin</a></li>
+<li class="leaf"><a href="http://voyages.michelin.fr/" target="_blank">Michelin Voyage</a></li>
+<li class="leaf"><a href="https://www.viamichelin.fr/web/Itineraires" target="_blank">ViaMichelin</a></li>
+<li class="last leaf"><a href="http://www.michelin.fr/mobility-apps" target="_blank">Michelin Mobility Apps</a></li>
+</ul></nav>
+<div id="block-ft-b2c-footer-blocks-footer-newsletter" class="block block--ft-b2c-footer-blocks block--ft-b2c-footer-blocks-footer-newsletter">
+        <div class="newsletter-primary-title">
+      <div  class="block__title">Newsletter MICHELIN Restaurants</div>
+    </div>
+
+          <div class="newsletter-secondary-title">
+        <div  class="block__title">Profitez des bons plans MICHELIN Restaurants en vous inscrivant à la newsletter :</div>
+      </div>
+
+
+  <div class="block__content">
+    <form class="mr-b2c-footer-newsletter-form ft-b2c-footer-blocks-form" action="/2brryjd/1786-cordon" method="post" id="ft-b2c-footer-blocks-form" accept-charset="UTF-8"><div><div class="form-item form-type-textfield form-item-email">
+ <input placeholder="Email" type="text" id="edit-email" name="email" value="" size="60" maxlength="128" class="form-text" />
+</div>
+<input type="submit" id="edit-submit--2" name="op" value="Ok" class="form-submit" /><input type="hidden" name="form_build_id" value="form-4g4ubjOuv9H84Qqi64oq5nrB89Q700ygA6_BA4lIKfw" />
+<input type="hidden" name="form_id" value="ft_b2c_footer_blocks_form" />
+</div></form>  </div>
+</div>
+<div id="block-accordion-blocks-footer-menu-and-newsletter-1" class="block block--accordion-blocks block--accordion-blocks-footer-menu-and-newsletter-1">
+        <h2  class="block__title">Footer menu and newsletter</h2>
+      <div class="block__content">
+    <div class="accordion_blocks_container">
+        <h2><a href="#">
+          Restaurateurs        </a></h2>
+    <div>
+      <ul class="menu"><li class="first leaf"><a href="http://gastronomie.bookatable.fr/" target="_blank">Découvrez nos offres</a></li>
+<li class="last leaf"><a href="https://login.bookatable.com/login?language=fr-FR" target="_blank">Connectez-vous</a></li>
+</ul>    </div>
+          <h2><a href="#">
+          Suivez-nous        </a></h2>
+    <div>
+      <ul class="menu"><li class="first leaf"><a href="https://www.facebook.com/guideMICHELINfr/" target="_blank">Sur Facebook</a></li>
+<li class="leaf"><a href="https://www.youtube.com/user/MichelinRestaurants" target="_blank">Sur Youtube</a></li>
+<li class="leaf"><a href="https://www.instagram.com/michelinguide/">Sur Instagram</a></li>
+<li class="last leaf"><a href="https://twitter.com/guideMichelinFR" target="_blank">Sur Twitter</a></li>
+</ul>    </div>
+          <h2><a href="#">
+          Nos autres services        </a></h2>
+    <div>
+      <ul class="menu"><li class="first leaf"><a href="https://bda.bookatable.com/Mobile/CancelBooking?inIframe=False&amp;cid=INTL-BOOKATABLEMASTER:76677&amp;lang=fr-FR" target="_blank">Annulez une réservation</a></li>
+<li class="leaf"><a href="http://www.bookatable.co.uk/" target="_blank">Réservez en Angleterre</a></li>
+<li class="last leaf"><a href="https://www.bookatable.com/de" target="_blank">Réservez en Allemagne</a></li>
+</ul>    </div>
+          <h2><a href="#">
+          MICHELIN GROUPE        </a></h2>
+    <div>
+      <ul class="menu"><li class="first leaf"><a href="http://www.michelin.fr/lentreprise/michelin-en-france" target="_blank">L&#039;entreprise Michelin</a></li>
+<li class="leaf"><a href="http://www.michelin.fr/pneus/pneu-auto?gclid=CK7W2L-OitACFRa3Gwods08GpQ&amp;gclsrc=aw.ds#type=type_2" target="_blank">Les pneus Michelin</a></li>
+<li class="leaf"><a href="http://voyages.michelin.fr/" target="_blank">Michelin Voyage</a></li>
+<li class="leaf"><a href="https://www.viamichelin.fr/web/Itineraires" target="_blank">ViaMichelin</a></li>
+<li class="last leaf"><a href="http://www.michelin.fr/mobility-apps" target="_blank">Michelin Mobility Apps</a></li>
+</ul>    </div>
+          <h2><a href="#">
+          Newsletter MICHELIN Restaurants        </a></h2>
+    <div>
+      <form class="mr-b2c-footer-newsletter-form ft-b2c-footer-blocks-form--2" action="/2brryjd/1786-cordon" method="post" id="ft-b2c-footer-blocks-form--2" accept-charset="UTF-8"><div><div class="form-item form-type-textfield form-item-email">
+ <input placeholder="Email" type="text" id="edit-email--2" name="email" value="" size="60" maxlength="128" class="form-text" />
+</div>
+<input type="submit" id="edit-submit--3" name="op" value="Ok" class="form-submit" /><input type="hidden" name="form_build_id" value="form-hBs9IF3jTvRmmumbOwwxfzqW0I7Du8909nP3l2gf5EE" />
+<input type="hidden" name="form_id" value="ft_b2c_footer_blocks_form" />
+</div></form>    </div>
+    </div>
+  </div>
+</div>
+  </div>
+        </div>
+        <div class="l-footer-sub-bottom">
+            <div class="l-region l-region--footer-sub-bottom">
+    <nav id="block-menu-menu-social-networks-left" role="navigation" class="block block--menu block--menu-menu-social-networks-left">
+      <div  class="block__title">Téléchargez notre application iOS</div>
+
+  <ul class="menu"><li class="first last leaf"><div class="entity entity-menu-fields menu-fields-menu-social-networks-left clearfix" class="entity entity-menu-fields menu-fields-menu-social-networks-left">
+  <div class="content">
+    <a href="https://itunes.apple.com/fr/app/michelin-restaurants-recherche/id523153222?mt=8" target="_blank" class="first last leaf icon-mr icon-apps"></a>  </div>
+</div>
+</li>
+</ul></nav>
+<nav id="block-menu-menu-social-networks-right" role="navigation" class="block block--menu block--menu-menu-social-networks-right">
+      <div  class="block__title">Téléchargez notre application Android</div>
+
+  <ul class="menu"><li class="first last leaf"><div class="entity entity-menu-fields menu-fields-menu-social-networks-right clearfix" class="entity entity-menu-fields menu-fields-menu-social-networks-right">
+  <div class="content">
+    <a href="https://play.google.com/store/apps/details?id=com.viamichelin.android.gm21" target="_blank" class="first last leaf icon-mr icon-android"></a>  </div>
+</div>
+</li>
+</ul></nav>
+  </div>
+        </div>
+        <div class="l-footer-bottom">
+            <div class="l-region l-region--footer-bottom">
+    <div id="block-ft-b2c-footer-blocks-footer-copyright" class="block block--ft-b2c-footer-blocks block--ft-b2c-footer-blocks-footer-copyright">
+        <div class="block__content">
+    <div class="footer-copyright-wrapper">
+ <div class="copyright-text">
+   &copy; MICHELIN 2018 </div>
+ <div class="copyright-menu">
+        <ul class="menu"><li class="first leaf"><a href="/conditions-generales-dutilisation">CGU</a></li>
+<li class="leaf"><a href="/donnees-personnelles">Données personnelles</a></li>
+<li class="leaf"><a href="/notice-legale">Notice légale</a></li>
+<li class="last leaf"><a href="/contactez-nous">Contactez-nous</a></li>
+</ul>    </div>
+</div>
+<div class="footer-logo">
+  <img class="footer-logo" id="footer-copyright-logo" data-src="https://restaurant.michelin.fr/sites/mtpb2c_fr/themes/mtpb2c/custom/michelin/img/logo_michelin_fr.png" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/modules/mtpb2c/contrib/lazyloader/image_placeholder.gif" alt="Michelin logo" title="Michelin" /><noscript><img class="footer-logo" id="footer-copyright-logo" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/themes/mtpb2c/custom/michelin/img/logo_michelin_fr.png" alt="Michelin logo" title="Michelin" /></noscript></div>  </div>
+</div>
+  </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>
+        <noscript>
+        <style type="text/css" media="all">
+          img[data-src] { display: none !important; }
+        </style>
+      </noscript>
+<nav id="mr-b2c-sliding-menu">
+  <div class="menu-top-sliding-menu-one-wrapper">
+    <ul class="menu"><li class="first last leaf"><div class="entity entity-menu-fields menu-fields-menu-top-sliding-menu-one clearfix" class="entity entity-menu-fields menu-fields-menu-top-sliding-menu-one">
+  <div class="content">
+    <a href="/magazine" class="first leaf icon-mr icon-partagez">Magazine</a>  </div>
+</div>
+</li>
+<li class="first last leaf"><div class="entity entity-menu-fields menu-fields-menu-top-sliding-menu-one clearfix" class="entity entity-menu-fields menu-fields-menu-top-sliding-menu-one">
+  <div class="content">
+    <a href="/instants-michelin" class="leaf icon-mr icon-profitez">Instants MICHELIN</a>  </div>
+</div>
+</li>
+<li class="first last leaf"><div class="entity entity-menu-fields menu-fields-menu-top-sliding-menu-one clearfix" class="entity entity-menu-fields menu-fields-menu-top-sliding-menu-one">
+  <div class="content">
+    <a href="/guide-michelin" class="last leaf icon-mr icon-decouvrez">Guide MICHELIN</a>  </div>
+</div>
+</li>
+</ul>  </div>
+
+  <div class="menu-top-sliding-menu-two-wrapper">
+    <ul class="menu"><li class="first leaf"><a href="http://gastronomie.bookatable.fr/" target="_blank">Informations Restaurateurs</a></li>
+<li class="last leaf"><a href="https://login.bookatable.com/login?language=fr-FR" target="_blank">Accès Restaurateurs</a></li>
+</ul>  </div>
+</nav>
+<script>jQuery(document).ready(function(){jQuery("#accordion").accordion({header: "h3", collapsible: true, alwaysOpen: false, active: false});});</script>
+<script src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/js/js_uHs5ccNEBHM6vesdaL6KU4x9j1HPpDCs3zuA42lw7KA.js"></script>
+<script>      (function ($) {
+        Drupal.behaviors.lazyloader = {
+          attach: function (context, settings) {
+            $("img[data-src]").lazyloader({distance: 0, icon: "" });
+          }
+        };
+      }(jQuery));</script>
+
+<!--[if lt IE 9]>
+<script src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/js/js_q2d-qES5qoOARLZdLHKA3SOiGW20v1kS9ST2I3uipgc.js"></script>
+<![endif]-->
+<script src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/js/js_07j5zJCluA4uMWVWpNYSIuMyavDvmrARp9lYluJB8uU.js"></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"778b962005","applicationID":"52774854","transactionName":"bwdRbBdUWUVRV0VaWVZNclsRXFhYH0RQVFNnD1JWBFJSRG9aXldTZxRaXRJqR1dXUQ==","queueTime":0,"applicationTime":1203,"atts":"Q0BSGl9OSks=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
